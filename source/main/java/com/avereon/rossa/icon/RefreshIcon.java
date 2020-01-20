@@ -7,7 +7,7 @@ public class RefreshIcon extends ProgramIcon {
 	@Override
 	protected void render() {
 		double radius = g( 13 );
-		double angle = 0;
+		double angle = -10;
 		double offset = 10;
 		double extent = 180 - (2 * offset);
 

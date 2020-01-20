@@ -1,5 +1,5 @@
 module com.avereon.rossa {
-	requires com.avereon.venza;
+	requires transitive com.avereon.venza;
 	requires javafx.graphics;
 	requires java.logging;
 	requires org.slf4j;
