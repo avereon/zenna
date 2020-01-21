@@ -39,11 +39,11 @@ public class SouthBranchIcon extends ProgramIcon {
 	}
 
 	public static void main( String[] args ) {
-		SouthBranchIcon icon = new SouthBranchIcon();
-		icon.setOpacity( 0.2 );
-		save( icon.setSize( 4096 ), "target/sbc-watermark.png" );
+		//SouthBranchIcon icon = new SouthBranchIcon();
+		//icon.setOpacity( 0.2 );
+		//save( icon.setSize( 4096 ), "target/sbc-watermark.png" );
 
-		//proof( new SouthBranchIcon().setSize( 1024 ) );
+		proof( new SouthBranchIcon() );
 		//save( new SouthBranchIcon().setSize( 4096 ), "target/sbc-transparent.png" );
 	}
 
