@@ -11,12 +11,12 @@ public class LightningBoltIcon extends ProgramIcon {
 
 	private void thickBolt() {
 		startPath();
-		moveTo( g( 19 ), g( 1 ) );
-		lineTo( g( 3 ), g( 19 ) );
-		lineTo( g( 19 ), g( 19 ) );
-		lineTo( g( 13 ), g( 31 ) );
-		lineTo( g( 29 ), g( 13 ) );
-		lineTo( g( 13 ), g( 13 ) );
+		moveTo( g( 17 ), g( 3 ) );
+		lineTo( g( 5 ), g( 19 ) );
+		lineTo( g( 18 ), g( 19 ) );
+		lineTo( g( 15 ), g( 29 ) );
+		lineTo( g( 27 ), g( 13 ) );
+		lineTo( g( 14 ), g( 13 ) );
 		closePath();
 		fill( GradientTone.LIGHT );
 		draw();
