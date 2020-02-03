@@ -53,20 +53,6 @@
 			<version>[0.1-SNAPSHOT,)</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-			<optional>true</optional>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-nop</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
