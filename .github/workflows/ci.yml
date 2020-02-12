@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - stable
-  schedule:
-    - cron: '30 12 * * *'
 
 env:
   AVN_PRODUCT: "rossa"
