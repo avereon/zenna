@@ -25,7 +25,7 @@ public class TerminalIcon extends ProgramIcon {
 		draw();
 
 		// Prompt
-		drawLine( g( 17 ), g( 12 ), g( 17 ), g( 20 ) );
+		drawLine( g( 17 ), g( 21 ), g( 21 ), g( 21 ) );
 	}
 
 	public static void main( String[] args ) {
