@@ -14,8 +14,8 @@ public class TerminalIcon extends ProgramIcon {
 		fill( getIconFillPaint( Color.web( "#606060" ), GradientTone.MEDIUM ) );
 		draw();
 
-		setDrawWidth( 2 * getDefaultDrawWidth() );
 		setDrawPaint( Color.web( "#e0e0e0" ) );
+		setDrawWidth( 2 * getOutlineWidth() );
 
 		// Arrow
 		startPath();

@@ -1,8 +1,6 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
-
-public abstract class XLargeIcon extends ProgramIcon {
+public abstract class XLargeIcon extends XIcon {
 
 	protected void xPath() {
 		double offset = 5.0;

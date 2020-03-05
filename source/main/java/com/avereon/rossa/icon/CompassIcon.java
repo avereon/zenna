@@ -120,8 +120,7 @@ public class CompassIcon extends ProgramIcon {
 
 	public static void main( String[] commands ) {
 		ProgramIcon icon = new CompassIcon();
-		icon.relocate( 0.25 * icon.getSize(), 0.25 * icon.getSize() );
-		proof( icon, 1.5 * icon.getSize(), 1.5 * icon.getSize() );
+		proof( icon );
 	}
 
 }

@@ -16,7 +16,7 @@ public class DocumentCloseIcon extends DocumentIcon {
 	}
 
 	public static void main( String[] commands ) {
-		proof( new DocumentCloseIcon() );
+		proof( new DocumentCloseIcon(), "-xe-theme-color: magenta; -xe-outline-paint: purple;" );
 	}
 
 }

@@ -19,7 +19,7 @@ public class ModuleIcon extends ProgramIcon {
 		lineTo( g( 8 ), g( 21 ) );
 		lineTo( g( 8 ), g( 11 ) );
 		closePath();
-		fill( GradientTone.MEDIUM );
+		fill( GradientTone.LIGHT );
 		draw();
 
 		// Edges

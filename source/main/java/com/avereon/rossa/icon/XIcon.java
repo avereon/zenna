@@ -1,8 +1,14 @@
 package com.avereon.rossa.icon;
 
 import com.avereon.venza.image.ProgramIcon;
+import javafx.scene.paint.Color;
 
 public abstract class XIcon extends ProgramIcon {
+
+	public XIcon() {
+		// Override the outline paint color
+		setOutlinePaint( Color.web( "#404040" ) );
+	}
 
 	protected void xPath() {
 		double radius = Math.sqrt( 2 * (g( 2 ) * g( 2 )) );

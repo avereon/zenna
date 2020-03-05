@@ -6,11 +6,14 @@ public class CloseToolIcon extends ProgramIcon {
 
 	private final int s = 6;
 
+	public CloseToolIcon() {
+	}
+
 	@Override
 	protected void render() {
 		int a = 16 - s;
 		int b = 16 + s;
-		setDrawWidth( 3 * getDefaultDrawWidth() );
+		setDrawWidth( 3 * getOutlineWidth() );
 		drawLine( g( a ), g( a ), g( b ), g( b ) );
 		drawLine( g( a ), g( b ), g( b ), g( a ) );
 	}

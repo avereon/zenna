@@ -1,5 +1,6 @@
 package com.avereon.rossa.icon;
 
+import com.avereon.venza.color.Colors;
 import com.avereon.venza.image.ProgramIcon;
 import javafx.scene.paint.Color;
 
@@ -10,7 +11,9 @@ public class NoticeIcon extends ProgramIcon {
 	}
 
 	public NoticeIcon( Color color ) {
-		setThemeColor( color );
+		super();
+		String webColor = Colors.web( color );
+		setStyle( "-xe-theme-color: " + webColor + "; -xe-outline-paint: " + webColor + ";" );
 	}
 
 	@Override
@@ -34,10 +37,7 @@ public class NoticeIcon extends ProgramIcon {
 	}
 
 	public static void main( String[] commands ) {
-		NoticeIcon icon = new NoticeIcon();
-		String style = "-xn-theme-color: green;";
-		icon.setStyle( style );
-		proof( icon );
+		proof( new NoticeIcon( Color.GREEN ) );
 	}
 
 }

@@ -24,6 +24,11 @@ public class XRingIcon extends XIcon {
 	// Orange 500
 	static final Color JET_TIP = Color.web( "#FF9800" );
 
+	public XRingIcon() {
+		//setOutlineColor( Color.web( "#404040" ) );
+		setStyle( "-xe-outline-color: #404040" );
+	}
+
 	protected void render() {
 		double ringScale = 7.0 / 11.0;
 

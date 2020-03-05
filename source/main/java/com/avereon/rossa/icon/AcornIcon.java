@@ -25,15 +25,15 @@ public class AcornIcon extends ProgramIcon {
 	protected void render() {
 		drawStem();
 		fill( getIconFillPaint( Color.SADDLEBROWN, GradientTone.MEDIUM ) );
-		draw();
+		draw( Color.SADDLEBROWN.darker() );
 
 		drawNut();
 		fill( getIconFillPaint( Color.SADDLEBROWN, GradientTone.LIGHT ) );
-		draw();
+		draw( Color.SADDLEBROWN.darker() );
 
 		drawCap();
 		fill( getIconFillPaint( Color.SANDYBROWN, GradientTone.MEDIUM ) );
-		draw();
+		draw( Color.SADDLEBROWN.darker() );
 	}
 
 	private void drawStem() {
