@@ -4,4 +4,5 @@ module com.avereon.rossa {
 	requires java.logging;
 
 	exports com.avereon.rossa.icon;
+	exports com.avereon.rossa.icon.flat;
 }

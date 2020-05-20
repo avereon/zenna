@@ -6,6 +6,10 @@ public class ToggleIcon extends ProgramIcon {
 
 	private boolean enabled;
 
+	public ToggleIcon() {
+		this( false );
+	}
+
 	public ToggleIcon( Boolean enabled ) {
 		this.enabled = enabled;
 	}
@@ -35,6 +39,10 @@ public class ToggleIcon extends ProgramIcon {
 			fillCenteredOval( g( w ), g( 16 ), g( r ), g( r ) );
 			drawCenteredOval( g( w ), g( 16 ), g( r ), g( r ) );
 		}
+	}
+
+	public static void main( String[] commands ) {
+		ProgramIcon.proof( new ToggleIcon( false ) );
 	}
 
 }

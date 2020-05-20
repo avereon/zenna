@@ -1,4 +1,4 @@
-package com.avereon.rossa.icon;
+package com.avereon.rossa.icon.flat;
 
 import com.avereon.venza.icon.RenderedIcon;
 
