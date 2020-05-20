@@ -5,12 +5,9 @@ import javafx.scene.paint.Color;
 
 public class NoticeIcon extends RenderedIcon {
 
-	public NoticeIcon() {
-		super();
-	}
+	public NoticeIcon() {}
 
 	public NoticeIcon( Color color ) {
-		super();
 		setRenderPaint( color );
 	}
 
