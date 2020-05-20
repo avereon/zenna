@@ -1,6 +1,6 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.icon.RenderedIcon;
 
 public class ArrowDownIcon extends ArrowIcon {
 
@@ -9,7 +9,7 @@ public class ArrowDownIcon extends ArrowIcon {
 	}
 
 	public static void main( String[] commands ) {
-		ProgramIcon.proof( new ArrowDownIcon() );
+		RenderedIcon.proof( new ArrowDownIcon() );
 	}
 
 }
