@@ -23,7 +23,7 @@ public class PowerIcon extends RenderedIcon {
 		draw();
 
 		startPath();
-		addCenteredArc( center.getX(), center.getY(), radius, radius, 90 + angle, 360 - (2 * angle) );
+		addArc( center.getX(), center.getY(), radius, radius, 90 + angle, 360 - (2 * angle) );
 		draw();
 	}
 

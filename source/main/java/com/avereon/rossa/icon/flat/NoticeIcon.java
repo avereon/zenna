@@ -21,8 +21,8 @@ public class NoticeIcon extends RenderedIcon {
 		int vr = h / 2;
 
 		startPath();
-		addCenteredArc( g( c ), g( c ), g( hr ), g( vr ), 0, 270 );
-		addCenteredArc( g( c + hr - 2 ), g( c + vr - 2 ), g( 2 ), g( 2 ), 270, 90 );
+		addArc( g( c ), g( c ), g( hr ), g( vr ), 0, 270 );
+		addArc( g( c + hr - 2 ), g( c + vr - 2 ), g( 2 ), g( 2 ), 270, 90 );
 		closePath();
 
 		fill();

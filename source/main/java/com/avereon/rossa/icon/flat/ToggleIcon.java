@@ -24,25 +24,25 @@ public class ToggleIcon extends RenderedIcon {
 
 		if( enabled ) {
 			startPath();
-			addCenteredArc( g( e ), g( 16 ), g( r + 2 ), g( r + 2 ), 180+alpha, -2 * alpha );
+			addArc( g( e ), g( 16 ), g( r + 2 ), g( r + 2 ), 180+alpha, -2 * alpha );
 			lineTo( g( w ), g( 16 - r ) );
-			addCenteredArc( g( w ), g( 16 ), g( r ), g( r ), 90, 180 );
+			addArc( g( w ), g( 16 ), g( r ), g( r ), 90, 180 );
 			closePath();
 			fill();
 
 			startPath();
-			addCenteredArc( g( e ), g( 16 ), g( r ), g( r ), 0, 360 );
+			addArc( g( e ), g( 16 ), g( r ), g( r ), 0, 360 );
 			fill();
 		} else {
 			startPath();
-			addCenteredArc( g( w ), g( 16 ), g( r + 2 ), g( r + 2 ), alpha, -2 * alpha );
+			addArc( g( w ), g( 16 ), g( r + 2 ), g( r + 2 ), alpha, -2 * alpha );
 			lineTo( g( e ), g( 16 + r ) );
-			addCenteredArc( g( e ), g( 16 ), g( r ), g( r ), 270, 180 );
+			addArc( g( e ), g( 16 ), g( r ), g( r ), 270, 180 );
 			closePath();
 			fill();
 
 			startPath();
-			addCenteredArc( g( w ), g( 16 ), g( r ), g( r ), 0, 360 );
+			addArc( g( w ), g( 16 ), g( r ), g( r ), 0, 360 );
 			fill();
 		}
 	}
