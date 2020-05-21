@@ -36,9 +36,10 @@ public class AcornIcon extends RenderedIcon {
 	}
 
 	private void drawStem() {
+		double r = 2;
 		startPath( g( centerLine - stemRadius ), g( capTop - 2 ) );
-		lineTo( g( centerLine - stemRadius ), g( stemTop ) );
-		lineTo( g( centerLine + stemRadius ), g( stemTop ) );
+		addCenteredArc( g( centerLine - stemRadius + r ), g( stemTop + r ), g( r ), g( r ), 180, -90 );
+		addCenteredArc( g( centerLine + stemRadius - r ), g( stemTop + r ), g( r ), g( r ), 90, -90 );
 		lineTo( g( centerLine + stemRadius ), g( capTop - 2 ) );
 		closePath();
 	}
@@ -46,7 +47,7 @@ public class AcornIcon extends RenderedIcon {
 	private void drawCap() {
 		startPath( g( centerLine + capRadius - 1 ), g( capBase ) );
 		addCenteredArc( g( centerLine + capRadius - 1 ), g( capBase - 1 ), g( 1 ), g( 1 ), 270, 90 );
-		addCenteredArc( g( centerLine ), g( capBase - 1 ), g( capRadius ), g( capBase - capTop -1 ), 0, 180 );
+		addCenteredArc( g( centerLine ), g( capBase - 1 ), g( capRadius ), g( capBase - capTop - 1 ), 0, 180 );
 		addCenteredArc( g( centerLine - capRadius + 1 ), g( capBase - 1 ), g( 1 ), g( 1 ), 180, 90 );
 		closePath();
 	}
