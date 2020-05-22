@@ -24,6 +24,8 @@ public class XRingIcon extends XIcon {
 	// Orange 500
 	static final Color JET_TIP = Color.web( "#FF9800" );
 
+	private final double tilt;
+
 	private final double outerRingMax;
 
 	private final double innerRingMax;
@@ -41,7 +43,7 @@ public class XRingIcon extends XIcon {
 		//setOutlineColor( Color.web( "#404040" ) );
 		//setStyle( "-xe-outline-color: #404040" );
 
-		double tilt = 12.0 / 16.0;
+		tilt = 12.0 / 16.0;
 		outerRingMax = 16 + getRadius() - getInset();
 		outerRingMin = outerRingMax * tilt;
 		innerRingMax = getTr();
@@ -52,7 +54,7 @@ public class XRingIcon extends XIcon {
 		double sqrt8 = Math.sqrt( 8 );
 		double dr = getTr() + sqrt8;
 
-		getGraphicsContext2D().save();
+		save();
 		// Top ring clip
 		startPath( g( dr ), g( 0 ) );
 		lineTo( g( 16 ), g( 16 - dr ) );
@@ -66,17 +68,17 @@ public class XRingIcon extends XIcon {
 		addArc( g( 16 ), g( 16 ), g( innerRingMax + 2 ), g( innerRingMin + 2 ), 0, 360 );
 		closePath();
 		fill( RING_BASE );
-		getGraphicsContext2D().restore();
+		restore();
 
 		// X top (no clip needed)
 		startPath();
 		xTopOpen();
 		addArc( g( 16 ), g( 16 ), g( innerRingMax ), g( innerRingMin ), 180, 180 );
 		closePath();
-		fill(  );
+		fill();
 
 		// Main ring clip
-		getGraphicsContext2D().save();
+		save();
 		startPath( g( 0 ), g( 32 ) );
 		lineTo( g( 0 ), g( dr ) );
 		lineTo( g( 16 - innerRingMax ), g( 16 + sqrt8 ) );
@@ -93,10 +95,10 @@ public class XRingIcon extends XIcon {
 		closePath();
 		fill( RING_BASE );
 		reset();
-		getGraphicsContext2D().restore();
+		restore();
 
 		// X bottom clip
-		getGraphicsContext2D().save();
+		save();
 		startPath( g( 0 ), g( 16 ) );
 		addArc( g( 16 ), g( 16 ), g( outerRingMax + 2 ), g( outerRingMin + 2 ), 180, 180 );
 		lineTo( g( 32 ), g( 16 ) );
@@ -109,8 +111,8 @@ public class XRingIcon extends XIcon {
 		startPath();
 		xBottomOpen();
 		closePath();
-		fill(  );
-		getGraphicsContext2D().restore();
+		fill();
+		restore();
 	}
 
 	private Paint jetPaint() {
@@ -121,51 +123,11 @@ public class XRingIcon extends XIcon {
 		return radialPaint( g( 16 ), g( 16 ), jetRadius, jetPaintStops );
 	}
 
-	@Deprecated
-	protected void renderOld() {
-		double ringScale = 9.0 / 11.0;
-
-		//		// Ring paint
-		//		List<Stop> ringPaintStops = new ArrayList<>();
-		//		ringPaintStops.add( new Stop( 0.6, RING_HIGHLIGHT ) );
-		//		ringPaintStops.add( new Stop( 0.9, RING_BASE ) );
-		//		Paint ringPaint = radialPaint( g( 16 ), (1 / ringScale) * g( 16 ), g( 11 ), ringPaintStops );
-
-		// Bottom of jet
-		getGraphicsContext2D().save();
-		clip( g( 0 ), g( 16 ), g( 32 ), g( 16 ) );
-		xPath();
-		fill( jetPaint() );
-		//fillAndDraw( jetPaint );
-		getGraphicsContext2D().restore();
-
-		// Ring
-		startPath();
-		addArc( g( 16 ), g( 16 ), g( 11 ), g( ringScale * 11 ), 0, 360 );
-		//moveTo( g( 21 ), g( 16 ) );
-		addArc( g( 16 ), g( 16 ), g( 5 ), g( ringScale * 5 ), 0, 360 );
-		closePath();
-		getGraphicsContext2D().save();
-		getGraphicsContext2D().scale( 1, ringScale );
-		fill( RING_BASE );
-		//fill( ringPaint );
-		getGraphicsContext2D().restore();
-		//draw();
-
-		// Top of jet
-		getGraphicsContext2D().save();
-		clip( g( 0 ), g( 0 ), g( 32 ), g( 16 ) );
-		xPath();
-		fill( jetPaint() );
-		//fillAndDraw( jetPaint );
-		getGraphicsContext2D().restore();
-	}
-
-	private void clip( double x, double y, double w, double h ) {
-		startPath();
-		addRect( x, y, w, h );
-		closePath();
-		clip();
+	private Paint ringPaint() {
+		List<Stop> ringPaintStops = new ArrayList<>();
+		ringPaintStops.add( new Stop( 0.6, RING_HIGHLIGHT ) );
+		ringPaintStops.add( new Stop( 0.9, RING_BASE ) );
+		return radialPaint( g( 16 ), (1 / tilt) * g( 16 ), g( 11 ), ringPaintStops );
 	}
 
 	public static void main( String[] commands ) {
