@@ -43,6 +43,7 @@ public class XRingIcon extends XIcon {
 
 		// Example how to override the style
 		//setStyle( "-fx-stroke: #404040;-fx-accent-color: -fx-accent;" );
+		setStyle( "-fx-stroke: #C0C0C0;-fx-accent-color: -fx-accent;" );
 
 		tilt = 12.0 / 16.0;
 		outerRingMax = 16 + getRadius() - getInset();
