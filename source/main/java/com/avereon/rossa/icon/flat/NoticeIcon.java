@@ -8,7 +8,7 @@ public class NoticeIcon extends RenderedIcon {
 	public NoticeIcon() {}
 
 	public NoticeIcon( Color color ) {
-		setRenderPaint( color );
+		setStrokePaint( color );
 	}
 
 	@Override

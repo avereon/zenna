@@ -40,8 +40,9 @@ public class XRingIcon extends XIcon {
 
 	public XRingIcon( double radius, double inset ) {
 		super( radius, inset );
-		//setOutlineColor( Color.web( "#404040" ) );
-		//setStyle( "-xe-outline-color: #404040" );
+
+		// Example how to override the style
+		//setStyle( "-fx-stroke: #404040;-fx-accent-color: -fx-accent;" );
 
 		tilt = 12.0 / 16.0;
 		outerRingMax = 16 + getRadius() - getInset();
@@ -67,7 +68,7 @@ public class XRingIcon extends XIcon {
 		addArc( g( 16 ), g( 16 ), g( outerRingMax ), g( outerRingMin ), 0, 360 );
 		addArc( g( 16 ), g( 16 ), g( innerRingMax + 2 ), g( innerRingMin + 2 ), 0, 360 );
 		closePath();
-		fill( RING_BASE );
+		fill( getAccentPaint() );
 		restore();
 
 		// X top (no clip needed)
@@ -93,7 +94,7 @@ public class XRingIcon extends XIcon {
 		addArc( g( 16 ), g( 16 ), g( outerRingMax ), g( outerRingMin ), 0, 360 );
 		addArc( g( 16 ), g( 16 ), g( innerRingMax + 2 ), g( innerRingMin + 2 ), 0, 360 );
 		closePath();
-		fill( RING_BASE );
+		fill( getAccentPaint() );
 		reset();
 		restore();
 

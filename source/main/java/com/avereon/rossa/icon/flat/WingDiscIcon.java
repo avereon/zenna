@@ -86,6 +86,7 @@ public class WingDiscIcon extends RenderedIcon {
 		wy = g( 25 );
 		vx = xx;
 		vy = xy;
+
 	}
 
 	@Override
@@ -94,7 +95,7 @@ public class WingDiscIcon extends RenderedIcon {
 
 		// Exhaust
 		double r = yy - vy + POINT_RADIUS;
-		double rn = POINT_RADIUS - g(2);
+		double rn = POINT_RADIUS - g( 2 );
 		startPath();
 		if( rn <= 0 ) {
 			moveTo( vx, vy );
@@ -103,7 +104,7 @@ public class WingDiscIcon extends RenderedIcon {
 		}
 		addArc( vx, vy, r, r, 225, 90 );
 		closePath();
-		fill(discColor);
+		fill( getAccentPaint() );
 
 		// Left wing
 		getGraphicsContext2D().save();

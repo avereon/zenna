@@ -23,7 +23,7 @@ public class AcornIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		setRenderPaint( Color.SADDLEBROWN );
+		setStrokePaint( Color.SADDLEBROWN );
 
 		drawStem();
 		fill();
