@@ -17,34 +17,18 @@ public class ToggleIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		double r = 8;
-		double w = r;
-		double e = 32 - r;
-		double alpha = Math.toDegrees( Math.atan2( r + 2, r ) );
-
+		startPath();
+		addArc( g( 8 ), g( 16 ), g( 8 ), g( 8 ), 90, 180 );
+		addArc( g( 24 ), g( 16 ), g( 8 ), g( 8 ), 270, 180 );
 		if( enabled ) {
-			startPath();
-			addArc( g( e ), g( 16 ), g( r + 2 ), g( r + 2 ), 180+alpha, -2 * alpha );
-			lineTo( g( w ), g( 16 - r ) );
-			addArc( g( w ), g( 16 ), g( r ), g( r ), 90, 180 );
-			closePath();
-			fill();
-
-			startPath();
-			addArc( g( e ), g( 16 ), g( r ), g( r ), 0, 360 );
-			fill();
+			moveTo( g( 24 ), g( 16 ) );
+			addArc( g( 24 ), g( 16 ), g( 6 ), g( 6 ), 0, 360 );
 		} else {
-			startPath();
-			addArc( g( w ), g( 16 ), g( r + 2 ), g( r + 2 ), alpha, -2 * alpha );
-			lineTo( g( e ), g( 16 + r ) );
-			addArc( g( e ), g( 16 ), g( r ), g( r ), 270, 180 );
-			closePath();
-			fill();
-
-			startPath();
-			addArc( g( w ), g( 16 ), g( r ), g( r ), 0, 360 );
-			fill();
+			moveTo( g( 8 ), g( 16 ) );
+			addArc( g( 8 ), g( 16 ), g( 6 ), g( 6 ), 0, 360 );
 		}
+		closePath();
+		fill();
 	}
 
 	@Override
