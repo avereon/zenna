@@ -1,32 +1,15 @@
 package com.avereon.rossa.icon.flat;
 
-import com.avereon.venza.icon.RenderedIcon;
-
-public class ProductIcon extends RenderedIcon {
-
-	private static final double sqrt3 = Math.sqrt( 3 );
-
-	private static final double l = 4;
+public class ProductIcon extends ModuleIcon {
 
 	@Override
 	protected void render() {
-		setStrokeWidth( g(l) );
-		block();
-		spin( g(16),g(16),120);
-		block();
-		spin( g(16),g(16),120);
-		block();
-	}
+		super.render();
 
-	private void block() {
-		double ax = 16;
-		double ay = 16 - 1 * l;
-		startPath( g( ax ), g( ay ) );
-		lineTo( g( ax - sqrt3 * l ), g( ay - l ) );
-		lineTo( g( ax ), g( ay - 2 * l ) );
-		lineTo( g( ax + sqrt3 * l ), g( ay - l ) );
+		setStrokeWidth( g(2) );
+		startPath();
+		addOval( g( 16 ), g( 16 ), g( 13 ), g( 13 ) );
 		closePath();
-		fill();
 		draw();
 	}
 
