@@ -69,7 +69,7 @@ public class XRingIcon extends XIcon {
 		addArc( g( 16 ), g( 16 ), g( outerRingMax ), g( outerRingMin ), 0, 360 );
 		addArc( g( 16 ), g( 16 ), g( innerRingMax + 2 ), g( innerRingMin + 2 ), 0, 360 );
 		closePath();
-		fill( getAccentPaint() );
+		fill( getPrimaryPaint() );
 		restore();
 
 		// X top (no clip needed)
@@ -95,7 +95,7 @@ public class XRingIcon extends XIcon {
 		addArc( g( 16 ), g( 16 ), g( outerRingMax ), g( outerRingMin ), 0, 360 );
 		addArc( g( 16 ), g( 16 ), g( innerRingMax + 2 ), g( innerRingMin + 2 ), 0, 360 );
 		closePath();
-		fill( getAccentPaint() );
+		fill( getPrimaryPaint() );
 		reset();
 		restore();
 

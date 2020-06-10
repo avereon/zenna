@@ -1,5 +1,7 @@
 package com.avereon.rossa.icon.flat;
 
+import javafx.scene.paint.Color;
+
 /**
  * Use <a href="http://www.pic2icon.com/">Pic2Icon</a> to convert to Windows icon.
  */
@@ -25,11 +27,8 @@ public class WingDiscLargeIcon extends WingDiscIcon {
 		vy = g( 23 );
 	}
 
-//	public static void main( String[] commands ) {
-//		proof( new WingDiscLargeIcon(), Color.web( ("#427893")) );
-//	}
-
 	public static void main( String[] commands ) {
-		proof( new WingDiscLargeIcon() );
+		proof( new WingDiscLargeIcon(), Color.web( "#206080" ), null );
 	}
+
 }

@@ -104,7 +104,7 @@ public class WingDiscIcon extends RenderedIcon {
 		}
 		addArc( vx, vy, r, r, 225, 90 );
 		closePath();
-		fill( getAccentPaint() );
+		fill( getPrimaryPaint() );
 
 		// Left wing
 		getGraphicsContext2D().save();
