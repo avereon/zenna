@@ -1,28 +1,14 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
-
-public class PlusIcon extends ProgramIcon {
+public class PlusIcon extends SymbolIcon {
 
 	@Override
 	protected void render() {
 		startPath();
-		moveTo( g( 13 ), g( 8 ) );
-		lineTo( g( 13 ), g( 13 ) );
-		lineTo( g( 8 ), g( 13 ) );
-		addArc( g( 8 ), g( 16 ), g( 3 ), g( 3 ), 90, 180 );
-		lineTo( g( 13 ), g( 19 ) );
-		lineTo( g( 13 ), g( 24 ) );
-		addArc( g( 16 ), g( 24 ), g( 3 ), g( 3 ), 180, 180 );
-		lineTo( g( 19 ), g( 19 ) );
-		lineTo( g( 24 ), g( 19 ) );
-		addArc( g( 24 ), g( 16 ), g( 3 ), g( 3 ), 270, 180 );
-		lineTo( g( 19 ), g( 13 ) );
-		lineTo( g( 19 ), g( 8 ) );
-		addArc( g( 16 ), g( 8 ), g( 3 ), g( 3 ), 0, 180 );
+		addLine( g( 16 - L ), g( 16 ), g( 16 + L ), g( 16 ) );
+		addLine( g( 16 ), g( 16 - L ), g( 16 ), g( 16 + L ) );
 		closePath();
-
-		fillAndDraw();
+		draw();
 	}
 
 	public static void main( String[] commands ) {

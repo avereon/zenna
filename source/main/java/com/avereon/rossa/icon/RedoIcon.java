@@ -1,24 +1,24 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class RedoIcon extends ProgramIcon {
+public class RedoIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
 		startPath();
-		moveTo( g( 17 ), g( 7 ) );
-		lineTo( g( 29 ), g( 13 ) );
-		lineTo( g( 17 ), g( 19 ) );
+		moveTo( g( 16 ), g( 7 ) );
+		lineTo( g( 28 ), g( 13 ) );
+		lineTo( g( 16 ), g( 19 ) );
 		closePath();
-		fillAndDraw( GradientTone.LIGHT );
+		fill();
 
 		startPath();
-		addArc( g( 17 ), g( 19 ), g( 14 ), g( 8 ), 90, 180 );
-		addArc( g( 17 ), g( 21 ), g( 10 ), g( 6 ), 270, -180 );
+		addArc( g( 16 ), g( 19 ), g( 14 ), g( 8 ), 90, 180 );
+		addArc( g( 16 ), g( 21 ), g( 10 ), g( 6 ), 270, -180 );
 		closePath();
 
-		fillAndDraw();
+		fill();
 	}
 
 	public static void main( String[] commands ) {

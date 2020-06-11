@@ -1,13 +1,16 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
-
-public class ProductIcon extends ProgramIcon {
+public class ProductIcon extends ModuleIcon {
 
 	@Override
 	protected void render() {
-		fillOval( g( 5 ), g( 5 ), g( 22 ), g( 22 ) );
-		drawOval( g( 5 ), g( 5 ), g( 22 ), g( 22 ) );
+		super.render();
+
+		setStrokeWidth( g(2) );
+		startPath();
+		addOval( g( 16 ), g( 16 ), g( 13 ), g( 13 ) );
+		closePath();
+		draw();
 	}
 
 	public static void main( String[] commands ) {

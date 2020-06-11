@@ -1,6 +1,6 @@
-package com.avereon.rossa.icon.flat;
+package com.avereon.rossa.icon;
 
-import com.avereon.venza.icon.RenderedIcon;
+import com.avereon.venza.image.RenderedIcon;
 
 public class ArrowUpIcon extends ArrowIcon {
 

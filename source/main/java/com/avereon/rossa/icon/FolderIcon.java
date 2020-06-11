@@ -1,32 +1,53 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
+import javafx.scene.paint.Color;
 
-public class FolderIcon extends ProgramIcon {
+public class FolderIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
+		startPath( g( 0 ), g( 14 ) );
+		lineTo( g( 24 ), g( 14 ) );
+		lineTo( g( 30 ), g( 26 ) );
+		lineTo( g( 6 ), g( 26 ) );
+		closePath();
+		fill();
+
+		startPath( g( 30 ), g( 22 ) );
+		lineTo( g( 25 ), g( 12 ) );
+
+		lineTo( g( 4 ), g( 12 ) );
+		addArc( g( 6 ), g( 6 ), g( 2 ), g( 2 ), 180, -90 );
+		addArc( g( 14 ), g( 6 ), g( 2 ), g( 2 ), 90, -90 );
+		addArc( g( 28 ), g( 8 ), g( 2 ), g( 2 ), 90, -90 );
+
+		closePath();
+		fill();
+	}
+
+	private void renderOld() {
 		// Back
 		startPath();
-		moveTo( g(7), g(7) );
-		lineTo( g(5), g(9) );
-		lineTo( g(5), g(25) );
-		lineTo( g(27), g(25) );
-		lineTo( g(27), g(11) );
-		lineTo( g(25), g(9) );
-		lineTo( g(15), g(9) );
-		lineTo( g(13), g(7) );
+		moveTo( g( 6 ), g( 6 ) );
+		lineTo( g( 4 ), g( 8 ) );
+		lineTo( g( 4 ), g( 26 ) );
+		lineTo( g( 28 ), g( 26 ) );
+		lineTo( g( 28 ), g( 10 ) );
+		lineTo( g( 26 ), g( 8 ) );
+		lineTo( g( 14 ), g( 8 ) );
+		lineTo( g( 12 ), g( 6 ) );
 		closePath();
-		fillAndDraw();
+		fill();
 
 		// Front
 		startPath();
-		moveTo( g(3), g(15) );
-		lineTo( g(5), g(25) );
-		lineTo( g(27), g(25) );
-		lineTo( g(25), g(15) );
+		moveTo( g( 2 ), g( 16 ) );
+		lineTo( g( 4 ), g( 26 ) );
+		lineTo( g( 28 ), g( 26 ) );
+		lineTo( g( 26 ), g( 16 ) );
 		closePath();
-		fillAndDraw( getIconFillPaint( GradientTone.DARK ) );
+		fill( Color.BROWN );
 	}
 
 	public static void main( String[] commands ) {

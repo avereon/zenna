@@ -1,24 +1,26 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class ExclamationIcon extends ProgramIcon {
+public class ExclamationIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
 		// Bar
 		startPath();
-		moveTo( g( 16 ), g( 3 ) );
-		curveTo( g( 13 ), g( 3 ), g( 13 ), g( 6 ), g( 13 ), g( 9 ) );
-		curveTo( g( 13 ), g( 13 ), g( 13 ), g( 19 ), g( 16 ), g( 19 ) );
-		curveTo( g( 19 ), g( 19 ), g( 19 ), g( 13 ), g( 19 ), g( 9 ) );
-		curveTo( g( 19 ), g( 6 ), g( 19 ), g( 3 ), g( 16 ), g( 3 ) );
+		moveTo( g( 16 ), g( 4 ) );
+		curveTo( g( 13 ), g( 4 ), g( 13 ), g( 7 ), g( 13 ), g( 10 ) );
+		curveTo( g( 13 ), g( 14 ), g( 13 ), g( 20 ), g( 16 ), g( 20 ) );
+		curveTo( g( 19 ), g( 20 ), g( 19 ), g( 14 ), g( 19 ), g( 10 ) );
+		curveTo( g( 19 ), g( 7 ), g( 19 ), g( 4 ), g( 16 ), g( 4 ) );
 		closePath();
-		fillAndDraw();
+		fill();
 
 		// Dot
-		fillOval( g( 13 ), g( 23 ), g( 6 ), g( 6 ) );
-		drawOval( g( 13 ), g( 23 ), g( 6 ), g( 6 ) );
+		startPath();
+		addArc( g( 16 ), g( 26 ), g( 3 ), g( 3 ), 0, 360 );
+		closePath();
+		fill();
 	}
 
 	public static void main( String[] commands ) {

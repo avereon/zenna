@@ -1,8 +1,8 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class SettingsIcon extends ProgramIcon {
+public class SettingsIcon extends RenderedIcon {
 
 	private static final int SLIDER_LEFT = 3;
 
@@ -57,15 +57,15 @@ public class SettingsIcon extends ProgramIcon {
 		//		lineTo( g( x + w ), g( y ) );
 		//		closePath();
 
-		setFillPaint( getIconDrawColor() );
+		//setFillPaint( getIconDrawColor() );
 		fill();
 	}
 
 	private void renderButton( int x, int y, int r ) {
 		//setFill( GradientTone.DARK );
-		setFillPaint( getIconDrawColor() );
-		fillCenteredOval( g( x ), g( y ), g( r ), g( r ) );
-		drawCenteredOval( g( x ), g( y ), g( r ), g( r ) );
+		//setFillPaint( getIconDrawColor() );
+		//fillCenteredOval( g( x ), g( y ), g( r ), g( r ) );
+		//drawCenteredOval( g( x ), g( y ), g( r ), g( r ) );
 	}
 
 	public static void main( String[] commands ) {

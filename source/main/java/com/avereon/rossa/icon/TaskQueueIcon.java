@@ -1,35 +1,38 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class TaskQueueIcon extends ProgramIcon {
+public class TaskQueueIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-//		// Left bar
-//		fillRect( g( 3 ), g( 3 ), g( 4 ), g( 26 ) );
-//		drawRect( g( 3 ), g( 3 ), g( 4 ), g( 26 ) );
-//
-//		// Right bar
-//		fillRect( g( 25 ), g( 3 ), g( 4 ), g( 26 ) );
-//		drawRect( g( 25 ), g( 3 ), g( 4 ), g( 26 ) );
+		// Bars
+//		startPath();
+//		moveTo( g( 8 ), g( 4 ) );
+//		lineTo( g( 8 ), g( 28 ) );
+//		moveTo( g( 24 ), g( 4 ) );
+//		lineTo( g( 24 ), g( 28 ) );
+//		closePath();
+//		draw();
+
+		startPath();
+		addArc( g( 16-32 ), g( 16 ), g(24), g(24),30,-60 );
+		draw();
+		startPath();
+		addArc( g( 16+32 ), g( 16 ), g(24), g(24),150,60 );
+		draw();
 
 		// Tasks
 		int r = 3;
-		fillCenteredOval( g( 16 ), g( 6 ), g( r ), g( r ) );
-		drawCenteredOval( g( 16 ), g( 6 ), g( r ), g( r ) );
-
-		fillCenteredOval( g( 16 ), g( 16 ), g( r ), g( r ) );
-		drawCenteredOval( g( 16 ), g( 16 ), g( r ), g( r ) );
-
-		fillCenteredOval( g( 16 ), g( 26 ), g( r ), g( r ) );
-		drawCenteredOval( g( 16 ), g( 26 ), g( r ), g( r ) );
-
-		// Task lines
-		//		drawLine( g( 13 ), g( 7 ), g( 19 ), g( 7 ) );
-		//		drawLine( g( 13 ), g( 13 ), g( 19 ), g( 13 ) );
-		//		drawLine( g( 13 ), g( 19 ), g( 19 ), g( 19 ) );
-		//		drawLine( g( 13 ), g( 25 ), g( 19 ), g( 25 ) );
+		startPath();
+		moveTo( g( 16 ), g( 6 ) );
+		addArc( g( 16 ), g( 6 ), g( r ), g( r ), 0, 360 );
+		moveTo( g( 16 ), g( 16 ) );
+		addArc( g( 16 ), g( 16 ), g( r ), g( r ), 0, 360 );
+		moveTo( g( 16 ), g( 26 ) );
+		addArc( g( 16 ), g( 26 ), g( r ), g( r ), 0, 360 );
+		closePath();
+		fill();
 	}
 
 	public static void main( String[] commands ) {

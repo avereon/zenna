@@ -1,8 +1,8 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class FileSystemIcon extends ProgramIcon {
+public class FileSystemIcon extends RenderedIcon {
 
 	private final double w = 13;
 
@@ -23,18 +23,28 @@ public class FileSystemIcon extends ProgramIcon {
 	}
 
 	private void renderStack() {
-		startPath();
-		moveTo( g( 16 - w ), g( 16 - s ) );
+		save();
+		startPath( g( 0 ), g( 16 - s ) );
+		lineTo( g( 16 - w ), g( 16 - s ) );
+		addArc( g( 16 ), g( 16 - s ), g( w + 2 ), g( h + 2 ), 180, 180 );
+		lineTo( g( 32 ), g( 16 - s ) );
+		lineTo( g( 32 ), g( 32 ) );
+		lineTo( g( 0 ), g( 32 ) );
+		closePath();
+		clip();
+		startPath( g( 16 - w ), g( 16 - s ) );
 		lineTo( g( 16 - w ), g( 16 ) );
 		addArc( g( 16 ), g( 16 ), g( w ), g( h ), 180, 180 );
 		lineTo( g( 16 + w ), g( 16 - s ) );
-		fillAndDraw();
+		fill();
+		restore();
 	}
 
 	private void renderDisk() {
-		setFillTone( GradientTone.LIGHT );
-		fillCenteredOval( g( 16 ), g( 16 ), g( w ), g( h ) );
-		drawCenteredOval( g( 16 ), g( 16 ), g( w ), g( h ) );
+		startPath();
+		addOval( g( 16 ), g( 16 ), g( w ), g( h ) );
+		closePath();
+		fill();
 	}
 
 	public static void main( String[] args ) {

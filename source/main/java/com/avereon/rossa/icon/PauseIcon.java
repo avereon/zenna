@@ -1,15 +1,14 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
-
-public class PauseIcon extends ProgramIcon {
+public class PauseIcon extends SymbolIcon {
 
 	@Override
 	protected void render() {
-		fillRect( g( 7 ), g( 7 ), g( 6 ), g( 18 ) );
-		fillRect( g( 19 ), g( 7 ), g( 6 ), g( 18 ) );
-		drawRect( g( 7 ), g( 7 ), g( 6 ), g( 18 ) );
-		drawRect( g( 19 ), g( 7 ), g( 6 ), g( 18 ) );
+		startPath();
+		addLine( g( 12 ), g( 16 - L ), g( 12 ), g( 16 + L ) );
+		addLine( g( 20 ), g( 16 - L ), g( 20 ), g( 16 + L ) );
+		closePath();
+		draw();
 	}
 
 	public static void main( String[] commands ) {

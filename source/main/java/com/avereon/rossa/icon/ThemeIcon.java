@@ -1,10 +1,10 @@
 package com.avereon.rossa.icon;
 
 import com.avereon.venza.color.Colors;
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 import javafx.scene.paint.Color;
 
-public class ThemeIcon extends ProgramIcon {
+public class ThemeIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
@@ -28,14 +28,14 @@ public class ThemeIcon extends ProgramIcon {
 		renderSwatch( d0, d1, d2 );
 
 		startPath();
-		addOval( g( 6 ), g( 26 ), g( 5 ), g( 5 ) );
+		addArc( g( 6 ), g( 26 ), g( 5 ), g( 5 ), 0, 360 );
 		closePath();
-		fillAndDraw( Color.web( "808080") );
+		fill( Color.web( "808080") );
 
 		startPath();
-		addOval( g( 6 ), g( 26 ), g( 2 ), g( 2 ) );
+		addArc( g( 6 ), g( 26 ), g( 2 ), g( 2 ), 0, 360 );
 		closePath();
-		fillAndDraw( getOutlinePaint() );
+		fill(Color.web( "606060"));
 	}
 
 	private void renderSwatch( Color a, Color b, Color c ) {
@@ -53,17 +53,17 @@ public class ThemeIcon extends ProgramIcon {
 		startPath();
 		addRect( g( 7 ), g( 21 ), g( w ), g( h ) );
 		closePath();
-		fillAndDraw( a );
+		fill( a );
 
 		startPath();
 		addRect( g( 15 ), g( 21 ), g( w ), g( h ) );
 		closePath();
-		fillAndDraw( b );
+		fill( b );
 
 		startPath();
 		addRect( g( 23 ), g( 21 ), g( w ), g( h ) );
 		closePath();
-		fillAndDraw( c );
+		fill( c );
 	}
 
 	public static void main( String[] args ) {

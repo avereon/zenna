@@ -1,12 +1,13 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
+import javafx.geometry.Point2D;
 
-public class RefreshIcon extends ProgramIcon {
+public class RefreshIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		double radius = g( 13 );
+		double radius = g( 12 );
 		double angle = -10;
 		double offset = 10;
 		double extent = 180 - (2 * offset);
@@ -25,27 +26,27 @@ public class RefreshIcon extends ProgramIcon {
 
 		double theta = 180 - (alpha + (90 - beta));
 		double arrowAngle = tipAngle - alpha;
-		double arrowRadius = radius * (Math.sin( (90 - beta) * RADIANS_PER_DEGREE ) / Math.sin( theta * RADIANS_PER_DEGREE ));
-		double arrowX = 0.5 + Math.cos( arrowAngle * RADIANS_PER_DEGREE ) * arrowRadius;
-		double arrowY = 0.5 - Math.sin( arrowAngle * RADIANS_PER_DEGREE ) * arrowRadius;
+		double arrowRadius = radius * (Math.sin( Math.toRadians( 90 - beta ) ) / Math.sin( Math.toRadians( theta ) ));
+		double arrowX = 0.5 + Math.cos( Math.toRadians( arrowAngle ) ) * arrowRadius;
+		double arrowY = 0.5 - Math.sin( Math.toRadians( arrowAngle ) ) * arrowRadius;
 
 		double shaftRadius = radius + 0.5 * (arrowRadius - radius);
-		double shaftX = 0.5 + Math.cos( (arrowAngle + sweep) * RADIANS_PER_DEGREE ) * shaftRadius;
-		double shaftY = 0.5 - Math.sin( (arrowAngle + sweep) * RADIANS_PER_DEGREE ) * shaftRadius;
+		double shaftX = 0.5 + Math.cos( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
+		double shaftY = 0.5 - Math.sin( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
 
-		double tailX = 0.5 + Math.cos( tailAngle * RADIANS_PER_DEGREE ) * radius;
-		double tailY = 0.5 - Math.sin( tailAngle * RADIANS_PER_DEGREE ) * radius;
+		double tailX = 0.5 + Math.cos( Math.toRadians( tailAngle ) ) * radius;
+		double tailY = 0.5 - Math.sin( Math.toRadians( tailAngle ) ) * radius;
 
 		double midpointX = 0.5 * (tailX + shaftX);
 		double midpointY = 0.5 * (tailY + shaftY);
 
-		Point tailVector = new Point( tailX - shaftX, tailY - shaftY );
+		Point2D tailVector = new Point2D( tailX - shaftX, tailY - shaftY );
 		double tailMagnitude = Math.sqrt( tailVector.getX() * tailVector.getX() + tailVector.getY() * tailVector.getY() );
-		Point centerVector = new Point( -tailVector.getY() / tailMagnitude, tailVector.getX() / tailMagnitude );
+		Point2D centerVector = new Point2D( -tailVector.getY() / tailMagnitude, tailVector.getX() / tailMagnitude );
 
 		double tailRadius = tailMagnitude / Math.sqrt( 3 );
-		Point tailCenter = new Point( midpointX + centerVector.getX() * 0.5 * tailRadius, midpointY + centerVector.getY() * 0.5 * tailRadius );
-		double tailStart = Math.atan2( tailCenter.getY() - shaftY, shaftX - tailCenter.getX() ) * DEGREES_PER_RADIAN;
+		Point2D tailCenter = new Point2D( midpointX + centerVector.getX() * 0.5 * tailRadius, midpointY + centerVector.getY() * 0.5 * tailRadius );
+		double tailStart = Math.toDegrees( Math.atan2( tailCenter.getY() - shaftY, shaftX - tailCenter.getX() ) );
 
 		startPath();
 		addArc( 0.5, 0.5, radius, radius, tailAngle, extent );
@@ -53,7 +54,7 @@ public class RefreshIcon extends ProgramIcon {
 		lineTo( shaftX, shaftY );
 		addArc( tailCenter.getX(), tailCenter.getY(), tailRadius, tailRadius, tailStart, -120 );
 		closePath();
-		fillAndDraw();
+		fill();
 
 		startPath();
 		addArc( 0.5, 0.5, radius, radius, tailAngle + 180, extent );
@@ -61,7 +62,7 @@ public class RefreshIcon extends ProgramIcon {
 		lineTo( rotate( shaftX ), rotate( shaftY ) );
 		addArc( rotate( tailCenter.getX() ), rotate( tailCenter.getY() ), tailRadius, tailRadius, tailStart + 180, -120 );
 		closePath();
-		fillAndDraw();
+		fill();
 	}
 
 	private double rotate( double value ) {

@@ -1,21 +1,40 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class WorkareaRenameIcon extends WorkareaIcon {
+public class WorkareaRenameIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		super.render();
+		startPath();
+		addArc( g( 6 ), g( 6 ), g( 2 ), g( 2 ), 90, 90 );
+		lineTo( g( 4 ), g( 8 ) );
+		lineTo( g( 28 ), g( 8 ) );
+		addArc( g( 26 ), g( 6 ), g( 2 ), g( 2 ), 0, 90 );
+		closePath();
+		fill();
 
-		setFillPaint( getIconFillPaint( GradientTone.LIGHT ) );
-		fillRect( g( 3 ), g( 11 ), g( 26 ), g( 10 ) );
-		drawRect( g( 3 ), g( 11 ), g( 26 ), g( 10 ) );
-		drawLine( g( 9 ), g( 13 ), g( 9 ), g( 19 ) );
+		// Split
+		startPath();
+		addArc( g( 26 ), g( 26 ), g( 2 ), g( 2 ), 270, 90 );
+		lineTo( g( 28 ), g( 24 ) );
+		lineTo( g( 4 ), g( 24 ) );
+		addArc( g( 6 ), g( 26 ), g( 2 ), g( 2 ), 180, 90 );
+		closePath();
+		fill();
+
+		startPath();
+		addArc( g( 2 ), g( 12 ), g( 2 ), g( 2 ), 90, 90 );
+		addArc( g( 2 ), g( 20 ), g( 2 ), g( 2 ), 180, 90 );
+		addArc( g( 30 ), g( 20 ), g( 2 ), g( 2 ), 270, 90 );
+		addArc( g( 30 ), g( 12 ), g( 2 ), g( 2 ), 0, 90 );
+		addRect( g( 6 ), g( 12 ), g( 2 ), g( 8 ) );
+		closePath();
+		fill();
 	}
 
 	public static void main( String[] commands ) {
-		ProgramIcon.proof( new WorkareaRenameIcon() );
+		proof( new WorkareaRenameIcon() );
 	}
 
 }

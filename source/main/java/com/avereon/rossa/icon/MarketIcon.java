@@ -1,27 +1,25 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class MarketIcon extends ProgramIcon {
+public class MarketIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		startPath();
-		moveTo( g( 5 ), g( 9 ) );
-		lineTo( g( 5 ), g( 25 ) );
-		addArc( g( 7 ), g( 25 ), g( 2 ), g( 2 ), 180, 90 );
-		lineTo( g( 25 ), g( 27 ) );
-		addArc( g( 25 ), g( 25 ), g( 2 ), g( 2 ), 270, 90 );
-		lineTo( g( 27 ), g( 9 ) );
+		// Bag
+		startPath( g( 6 ), g( 10) );
+		addArc( g( 8 ), g( 26 ), g( 2 ), g( 2 ), 180, 90 );
+		addArc( g( 24 ), g( 26 ), g( 2 ), g( 2 ), 270, 90 );
+		lineTo( g( 26 ), g( 10 ) );
 		closePath();
 		fill();
-		draw();
 
-		startPath();
-		moveTo( g( 11 ), g( 9 ) );
-		lineTo( g( 11 ), g( 7 ) );
-		addArc( g( 16 ), g( 7 ), g( 5 ), g( 4 ), 180, -180 );
-		lineTo( g( 21 ), g( 9 ) );
+		// Handle
+		setStrokeWidth( g(2) );
+		startPath( g( 11 ), g( 10 ) );
+		lineTo( g( 11 ), g( 9 ) );
+		addArc( g( 16 ), g( 9 ), g( 5 ), g( 4 ), 180, -180 );
+		lineTo( g( 21 ), g( 10 ) );
 		draw();
 	}
 

@@ -1,9 +1,9 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 import javafx.scene.paint.Color;
 
-public class SouthBranchIcon extends ProgramIcon {
+public class SouthBranchIcon extends RenderedIcon {
 
 	double b = g( 32 );
 
@@ -21,12 +21,15 @@ public class SouthBranchIcon extends ProgramIcon {
 
 	@Override
 	protected void render() {
+		Color ringColor = Color.web( "#204080");
+		Color arrowColor = Color.LIGHTGRAY;
+		Color outlineColor = Color.web( "#404040");
 		startPath();
 		addOval( c, c, g, g );
 		moveTo( c + ze, c );
 		addOval( c, c, ze, ze );
 		closePath();
-		fill( Color.web( "#204080") );
+		fill( ringColor );
 
 		startPath();
 		moveTo( b - f, k );
@@ -34,8 +37,13 @@ public class SouthBranchIcon extends ProgramIcon {
 		lineTo( f, k );
 		lineTo( c, g );
 		closePath();
-		fillAndDraw( Color.LIGHTGRAY );
-		drawLine( c, g, c, q );
+		fill( arrowColor );
+		setStrokeWidth( g( 1 ) );
+		draw( outlineColor );
+
+		startPath( c, g );
+		lineTo( c, q );
+		draw( outlineColor );
 	}
 
 	public static void main( String[] args ) {

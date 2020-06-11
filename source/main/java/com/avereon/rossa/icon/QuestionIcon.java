@@ -1,27 +1,29 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class QuestionIcon extends ProgramIcon {
+public class QuestionIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
 		// Squiggle
 		startPath();
-		moveTo( g( 9 ), g( 9 ) );
-		addArc( g( 12 ), g( 9 ), g( 3 ), g( 2 ), 180, 180 );
-		addArc( g( 16 ), g( 9 ), g( 1 ), g( 1 ), 180, -180 );
-		curveTo( g( 17 ), g( 13 ), g( 13 ), g( 11 ), g( 13 ), g( 17 ) );
-		addArc( g( 16 ), g( 17 ), g( 3 ), g( 2 ), 180, 180 );
+		moveTo( g( 9 ), g( 10 ) );
+		addArc( g( 12 ), g( 10 ), g( 3 ), g( 2 ), 180, 180 );
+		addArc( g( 16 ), g( 10 ), g( 1 ), g( 1 ), 180, -180 );
+		curveTo( g( 17 ), g( 14 ), g( 13 ), g( 12 ), g( 13 ), g( 18 ) );
+		addArc( g( 16 ), g( 18 ), g( 3 ), g( 2 ), 180, 180 );
 
-		curveTo( g( 19 ), g( 13 ), g( 23 ), g( 13 ), g( 23 ), g( 9 ) );
-		addArc( g( 16 ), g( 9 ), g( 7 ), g( 6 ), 0, 180 );
+		curveTo( g( 19 ), g( 14 ), g( 23 ), g( 14 ), g( 23 ), g( 10 ) );
+		addArc( g( 16 ), g( 10 ), g( 7 ), g( 6 ), 0, 180 );
 		closePath();
-		fillAndDraw();
+		fill();
 
 		// Dot
-		fillOval( g( 13 ), g( 23 ), g( 6 ), g( 6 ) );
-		drawOval( g( 13 ), g( 23 ), g( 6 ), g( 6 ) );
+		startPath();
+		addArc( g( 16 ), g( 26 ), g( 3 ), g( 3 ), 0, 360 );
+		closePath();
+		fill();
 	}
 
 	public static void main( String[] commands ) {

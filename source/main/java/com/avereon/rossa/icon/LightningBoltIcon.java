@@ -1,12 +1,12 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class LightningBoltIcon extends ProgramIcon {
+public class LightningBoltIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		thickBolt();
+		thinBolt();
 	}
 
 	private void thickBolt() {
@@ -18,8 +18,8 @@ public class LightningBoltIcon extends ProgramIcon {
 		lineTo( g( 27 ), g( 13 ) );
 		lineTo( g( 14 ), g( 13 ) );
 		closePath();
-		fill( GradientTone.LIGHT );
-		draw();
+		fill();
+		//draw();
 	}
 
 	private void thinBolt() {
@@ -31,8 +31,8 @@ public class LightningBoltIcon extends ProgramIcon {
 		lineTo( g( 21 ), g( 13 ) );
 		lineTo( g( 16 ), g( 13 ) );
 		closePath();
-		fill( GradientTone.LIGHT );
-		draw();
+		fill();
+		//draw();
 	}
 
 	public static void main( String[] commands ) {

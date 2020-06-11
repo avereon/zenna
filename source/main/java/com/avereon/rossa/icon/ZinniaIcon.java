@@ -1,7 +1,7 @@
 package com.avereon.rossa.icon;
 
 import com.avereon.venza.color.Colors;
-import com.avereon.venza.icon.RenderedIcon;
+import com.avereon.venza.image.RenderedIcon;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -14,10 +14,13 @@ public class ZinniaIcon extends RenderedIcon {
 	private int layers = 2;
 
 	public ZinniaIcon() {
-		String pink = Colors.web( Color.HOTPINK );
-		String pingd = Colors.web( Color.HOTPINK.darker() );
-		// This just gets overridden
-		setStyle( "-fx-primary: ladder( -fx-text-background-color, " + pingd + " 50%, " + pink + " 50% );" );
+		// This is a bit more advance example of how to have colors change for dark
+		// and light themes. Since the theme switches on -fx-text-background-color
+		// other colors can be configured to switch as well. In this case the
+		// primary color is configured to use two different shades of hot pink.
+		String hotPink = Colors.web( Color.HOTPINK );
+		String deepPink = Colors.web( Color.HOTPINK.darker() );
+		setStyle( "-fx-primary: ladder( -fx-text-background-color, " + deepPink + " 50%, " + hotPink + " 50% );" );
 	}
 
 	@Override

@@ -1,28 +1,15 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class SettingIcon extends ProgramIcon {
+public class SettingIcon extends ToggleIcon {
 
-	@Override
-	protected void render() {
-		//		beginPath();
-		//		addArc( g( 24 ), g( 16 ), g( 3 ), g( 3 ), 270, 180 );
-		//		lineTo( g( 8 ), g( 13 ) );
-		//		addArc( g( 8 ), g( 16 ), g( 3 ), g( 3 ), 90, 180 );
-		//		closePath();
-		//		fillAndDraw();
-
-		startPath();
-		addArc( g( 24 ), g( 16 ), g( 5 ), g( 5 ), 270, 180 );
-		lineTo( g( 8 ), g( 11 ) );
-		addArc( g( 8 ), g( 16 ), g( 5 ), g( 5 ), 90, 180 );
-		closePath();
-		fillAndDraw();
+	public SettingIcon() {
+		super();
 	}
 
 	public static void main( String[] commands ) {
-		proof( new SettingIcon() );
+		RenderedIcon.proof( new SettingIcon() );
 	}
 
 }

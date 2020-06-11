@@ -1,8 +1,8 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class CutIcon extends ProgramIcon {
+public class CutIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
@@ -24,23 +24,13 @@ public class CutIcon extends ProgramIcon {
 		lineTo( g( 25 ), g( 18 ) );
 		addArc( g( 25 ), g( 20 ), g( 2 ), g( 2 ), 90, 90 );
 		closePath();
-		fillAndDraw();
+		fill();
 
 		// Left Wave
-		startPath();
-		moveTo( g( 3 ), g( 17 ) );
-		curveTo( g( 9 ), g( 17 ), g( 11 ), g( 5 ), g( 19 ), g( 5 ) );
-		curveTo( g( 13 ), g( 5 ), g( 11 ), g( 17 ), g( 3 ), g( 17 ) );
-		closePath();
-		fillAndDraw();
-
-		// Right Wave
-		startPath();
-		moveTo( g( 5 ), g( 19 ) );
-		curveTo( g( 11 ), g( 19 ), g( 13 ), g( 7 ), g( 21 ), g( 7 ) );
-		curveTo( g( 15 ), g( 7 ), g( 13 ), g( 19 ), g( 5 ), g( 19 ) );
-		closePath();
-		fillAndDraw();
+		wave();
+		move(g(3),g(3));
+		wave();
+		reset();
 
 		// Top Scissor
 		startPath();
@@ -60,11 +50,20 @@ public class CutIcon extends ProgramIcon {
 		lineTo(g(18),g(25));
 		addArc(g(20),g(25),g(2),g(2),180,-90);
 		closePath();
-		fillAndDraw( GradientTone.LIGHT);
+		fill();
 
 		// Hinge
 		double p = 17.75;
-		drawLine( g(p),g(p),g(p),g(p) );
+		//drawLine( g(p),g(p),g(p),g(p) );
+	}
+
+	private void wave() {
+		startPath();
+		moveTo( g( 0 ), g( 16 ) );
+		curveTo( g( 6 ), g( 16 ), g( 10 ), g( 4 ), g( 20 ), g( 4 ) );
+		curveTo( g( 14 ), g( 4 ), g( 10 ), g( 16 ), g( 2 ), g( 16 ) );
+		closePath();
+		fill();
 	}
 
 	public static void main( String[] commands ) {

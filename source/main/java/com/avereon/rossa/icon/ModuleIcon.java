@@ -1,35 +1,34 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class ModuleIcon extends ProgramIcon {
+public class ModuleIcon extends RenderedIcon {
+
+	private static final double sqrt3 = Math.sqrt( 3 );
+
+	private static final double l = 3;
+
+	private static final double g = 1;
 
 	@Override
 	protected void render() {
-		setFillTone( GradientTone.DARK );
-		fillCenteredOval( g( 16 ), g( 16 ), g( 13 ), g( 13 ) );
-		drawCenteredOval( g( 16 ), g( 16 ), g( 13 ), g( 13 ) );
+		setStrokeWidth( g( l ) );
+		block();
+		spin( g( 16 ), g( 16 ), 120 );
+		block();
+		spin( g( 16 ), g( 16 ), 120 );
+		block();
+	}
 
-		// Outline
-		startPath();
-		moveTo( g( 16 ), g( 7 ) );
-		lineTo( g( 24 ), g( 11 ) );
-		lineTo( g( 24 ), g( 21 ) );
-		lineTo( g( 16 ), g( 25 ) );
-		lineTo( g( 8 ), g( 21 ) );
-		lineTo( g( 8 ), g( 11 ) );
+	private void block() {
+		double ax = 16;
+		double ay = (16 - 0.5 * l) - g;
+		startPath( g( ax ), g( ay ) );
+		lineTo( g( ax - sqrt3 * l ), g( ay - l ) );
+		lineTo( g( ax ), g( ay - 2 * l ) );
+		lineTo( g( ax + sqrt3 * l ), g( ay - l ) );
 		closePath();
-		fill( GradientTone.LIGHT );
-		draw();
-
-		// Edges
-		startPath();
-		moveTo( g( 16 ), g( 25 ) );
-		lineTo( g( 16 ), g( 15 ) );
-		moveTo( g( 8 ), g( 11 ) );
-		lineTo( g( 16 ), g( 15 ) );
-		moveTo( g( 24 ), g( 11 ) );
-		lineTo( g( 16 ), g( 15 ) );
+		fill();
 		draw();
 	}
 

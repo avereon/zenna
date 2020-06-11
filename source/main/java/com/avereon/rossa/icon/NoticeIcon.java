@@ -1,39 +1,31 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.color.Colors;
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 import javafx.scene.paint.Color;
 
-public class NoticeIcon extends ProgramIcon {
+public class NoticeIcon extends RenderedIcon {
 
-	public NoticeIcon() {
-		super();
-	}
+	public NoticeIcon() {}
 
 	public NoticeIcon( Color color ) {
-		super();
-		String webColor = Colors.web( color );
-		setStyle( "-xe-theme-color: " + webColor + "; -xe-outline-paint: " + webColor + ";" );
+		setStrokePaint( color );
 	}
 
 	@Override
 	protected void render() {
-		int w = 26;
-		int h = 26;
+		int w = 28;
+		int h = 28;
 
 		int c = 16;
-		int r = c + w / 2;
 		int hr = w / 2;
 		int vr = h / 2;
 
 		startPath();
-		moveTo( g( r ), g( c + vr ) );
-		lineTo( g( r ), g( c ) );
 		addArc( g( c ), g( c ), g( hr ), g( vr ), 0, 270 );
+		addArc( g( c + hr - 2 ), g( c + vr - 2 ), g( 2 ), g( 2 ), 270, 90 );
 		closePath();
 
 		fill();
-		draw();
 	}
 
 	public static void main( String[] commands ) {

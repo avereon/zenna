@@ -1,8 +1,9 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
+import com.avereon.venza.image.RenderedImage;
 
-public class ToggleIcon extends ProgramIcon {
+public class ToggleIcon extends RenderedIcon {
 
 	private boolean enabled;
 
@@ -16,33 +17,29 @@ public class ToggleIcon extends ProgramIcon {
 
 	@Override
 	protected void render() {
-		double r = 7;
-		double w = r + 1;
-		double e = 32 - r - 1;
-
 		startPath();
-		moveTo( g( w ), g( 16 - r ) );
-		addArc( g( w ), g( 16 ), g( r ), g( r ), 90, 180 );
-		lineTo( g( e ), g( 16 + r ) );
-		addArc( g( e ), g( 16 ), g( r ), g( r ), 270, 180 );
-		closePath();
-
-		fill( enabled ? GradientTone.MEDIUM : GradientTone.DARK );
-		draw();
-
+		addArc( g( 8 ), g( 16 ), g( 8 ), g( 8 ), 90, 180 );
+		addArc( g( 24 ), g( 16 ), g( 8 ), g( 8 ), 270, 180 );
 		if( enabled ) {
-			setFillTone( GradientTone.LIGHT );
-			fillCenteredOval( g( e ), g( 16 ), g( r ), g( r ) );
-			drawCenteredOval( g( e ), g( 16 ), g( r ), g( r ) );
+			moveTo( g( 24 ), g( 16 ) );
+			addArc( g( 24 ), g( 16 ), g( 6 ), g( 6 ), 0, 360 );
 		} else {
-			setFillTone( GradientTone.MEDIUM );
-			fillCenteredOval( g( w ), g( 16 ), g( r ), g( r ) );
-			drawCenteredOval( g( w ), g( 16 ), g( r ), g( r ) );
+			moveTo( g( 8 ), g( 16 ) );
+			addArc( g( 8 ), g( 16 ), g( 6 ), g( 6 ), 0, 360 );
 		}
+		closePath();
+		fill();
+	}
+
+	@Override
+	public <T extends RenderedImage> T copy() {
+		T copy = super.copy();
+		((ToggleIcon)copy).enabled = this.enabled;
+		return copy;
 	}
 
 	public static void main( String[] commands ) {
-		ProgramIcon.proof( new ToggleIcon( false ) );
+		RenderedIcon.proof( new ToggleIcon( false ) );
 	}
 
 }

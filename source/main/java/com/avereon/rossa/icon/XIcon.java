@@ -1,31 +1,68 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
-import javafx.scene.paint.Color;
+import com.avereon.venza.image.RenderedIcon;
 
-public abstract class XIcon extends ProgramIcon {
+public class XIcon extends RenderedIcon {
+
+	private final double radius;
+
+	private final double inset;
+
+	private final double tr;
 
 	public XIcon() {
-		// Override the outline paint color
-		setOutlinePaint( Color.web( "#404040" ) );
+		this( 3, 8 );
+	}
+
+	protected XIcon( double radius, double inset ) {
+		this.radius = radius;
+		this.inset = inset;
+		this.tr = Math.sqrt( 2 * (this.radius * this.radius) );
+	}
+
+	protected double getRadius() {
+		return radius;
+	}
+
+	protected double getInset() {
+		return inset;
+	}
+
+	protected double getTr() {
+		return tr;
+	}
+
+	@Override
+	protected void render() {
+		xPath();
+		fill();
 	}
 
 	protected void xPath() {
-		double radius = Math.sqrt( 2 * (g( 2 ) * g( 2 )) );
 		startPath();
-		moveTo( g( 16 ), g( 12 ) );
-		lineTo( g( 22 ), g( 6 ) );
-		addArc( g( 24 ), g( 8 ), radius, radius, 135, -180 );
-		lineTo( g( 20 ), g( 16 ) );
-		lineTo( g( 26 ), g( 22 ) );
-		addArc( g( 24 ), g( 24 ), radius, radius, 45, -180 );
-		lineTo( g( 16 ), g( 20 ) );
-		lineTo( g( 10 ), g( 26 ) );
-		addArc( g( 8 ), g( 24 ), radius, radius, 315, -180 );
-		lineTo( g( 12 ), g( 16 ) );
-		lineTo( g( 6 ), g( 10 ) );
-		addArc( g( 8 ), g( 8 ), radius, radius, 225, -180 );
+		xTopOpen();
+		xBottomOpen();
 		closePath();
+	}
+
+	protected void xTopOpen() {
+		lineTo( g( 16 + tr ), g( 16 ) );
+		addArc( g( 32 - inset ), g( inset ), g( radius ), g( radius ), 315, 180 );
+		lineTo( g( 16 ), g( 16 - tr ) );
+		addArc( g( inset ), g( inset ), g( radius ), g( radius ), 45, 180 );
+		lineTo( g( 16 - tr ), g( 16 ) );
+	}
+
+	protected void xBottomOpen() {
+		lineTo( g( 16 - tr ), g( 16 ) );
+		addArc( g( inset ), g( 32 - inset ), g( radius ), g( radius ), 135, 180 );
+		lineTo( g( 16 ), g( 16 + tr ) );
+		addArc( g( 32 - inset ), g( 32 - inset ), g( radius ), g( radius ), 225, 180 );
+		lineTo( g( 16 + tr ), g( 16 ) );
+	}
+
+	public static void main( String[] commands ) {
+		proof( new XIcon() );
 	}
 
 }

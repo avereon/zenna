@@ -1,21 +1,23 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
+import com.avereon.venza.image.RenderedIcon;
 
-public class CloseToolIcon extends ProgramIcon {
+public class CloseToolIcon extends RenderedIcon {
 
 	private final int s = 6;
 
-	public CloseToolIcon() {
-	}
+	public CloseToolIcon() {}
 
 	@Override
 	protected void render() {
 		int a = 16 - s;
 		int b = 16 + s;
-		setDrawWidth( 3 * getOutlineWidth() );
-		drawLine( g( a ), g( a ), g( b ), g( b ) );
-		drawLine( g( a ), g( b ), g( b ), g( a ) );
+
+		startPath(g( a ), g( a ));
+		lineTo( g( b ), g( b ) );
+		moveTo( g( a ), g( b ) );
+		lineTo( g( b ), g( a ) );
+		draw();
 	}
 
 	public static void main( String[] commands ) {

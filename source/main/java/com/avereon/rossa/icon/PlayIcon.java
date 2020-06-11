@@ -1,18 +1,16 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.ProgramIcon;
-
-public class PlayIcon extends ProgramIcon {
+public class PlayIcon extends SymbolIcon {
 
 	@Override
 	protected void render() {
 		startPath();
-		moveTo( g( 7 ), g( 7 ) );
-		lineTo( g( 7 ), g( 25 ) );
-		lineTo( g( 25 ), g( 16 ) );
+		moveTo( g( 16 - L ), g( 16 - L ) );
+		lineTo( g( 16 - L ), g( 16 + L ) );
+		lineTo( g( 16 + L ), g( 16 ) );
 		closePath();
-
-		fillAndDraw();
+		fill();
+		draw();
 	}
 
 	public static void main( String[] commands ) {
