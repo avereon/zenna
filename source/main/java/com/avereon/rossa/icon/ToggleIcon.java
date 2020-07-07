@@ -1,7 +1,7 @@
 package com.avereon.rossa.icon;
 
 import com.avereon.venza.image.RenderedIcon;
-import com.avereon.venza.image.RenderedImage;
+import com.avereon.venza.image.VectorImage;
 
 public class ToggleIcon extends RenderedIcon {
 
@@ -32,7 +32,7 @@ public class ToggleIcon extends RenderedIcon {
 	}
 
 	@Override
-	public <T extends RenderedImage> T copy() {
+	public <T extends VectorImage> T copy() {
 		T copy = super.copy();
 		((ToggleIcon)copy).enabled = this.enabled;
 		return copy;

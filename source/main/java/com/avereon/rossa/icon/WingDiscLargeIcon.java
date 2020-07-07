@@ -1,5 +1,6 @@
 package com.avereon.rossa.icon;
 
+import com.avereon.venza.image.Proof;
 import javafx.scene.paint.Color;
 
 /**
@@ -28,7 +29,7 @@ public class WingDiscLargeIcon extends WingDiscIcon {
 	}
 
 	public static void main( String[] commands ) {
-		proof( new WingDiscLargeIcon(), Color.web( "#206080" ), null );
+		Proof.proof( new WingDiscLargeIcon(), Color.web( "#206080" ), null );
 	}
 
 }
