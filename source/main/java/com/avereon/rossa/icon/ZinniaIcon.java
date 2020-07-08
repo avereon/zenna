@@ -7,7 +7,7 @@ import javafx.scene.paint.Paint;
 
 public class ZinniaIcon extends RenderedIcon {
 
-	private double centerRadius = 3;
+	private double centerRadius = 4;
 
 	private int likeness = 5;
 
@@ -20,7 +20,12 @@ public class ZinniaIcon extends RenderedIcon {
 		// primary color is configured to use two different shades of hot pink.
 		String hotPink = Colors.web( Color.HOTPINK );
 		String deepPink = Colors.web( Color.HOTPINK.darker() );
-		setStyle( "-fx-primary: ladder( -fx-text-background-color, " + deepPink + " 50%, " + hotPink + " 50% );" );
+		String saddleBrown = Colors.web( Color.SADDLEBROWN );
+		String deepBrown = Colors.web( Color.SADDLEBROWN.darker() );
+
+		String primary = "-fx-primary: ladder( -fx-text-background-color, " + deepPink + " 50%, " + hotPink + " 50% );";
+		String secondary = "-fx-secondary: ladder( -fx-text-background-color, " + deepBrown + " 50%, " + saddleBrown + " 50% );";
+		setStyle( primary + secondary );
 	}
 
 	@Override
