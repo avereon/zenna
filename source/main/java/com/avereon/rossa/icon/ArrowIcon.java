@@ -6,8 +6,6 @@ public class ArrowIcon extends SymbolIcon {
 
 	@Override
 	protected void render() {
-		setDrawWidth( g( 4 ) );
-
 		rotate();
 
 		startPath();

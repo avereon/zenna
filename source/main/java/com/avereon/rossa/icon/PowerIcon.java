@@ -9,8 +9,6 @@ public class PowerIcon extends RenderedIcon {
 
 	private final double radius = g( 12 );
 
-	private final double angle = 35;
-
 	@Override
 	protected void render() {
 		renderWithStroke();
@@ -23,6 +21,7 @@ public class PowerIcon extends RenderedIcon {
 		draw();
 
 		startPath();
+		double angle = 35;
 		addArc( center.getX(), center.getY(), radius, radius, 90 + angle, 360 - (2 * angle) );
 		draw();
 	}
