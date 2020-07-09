@@ -36,7 +36,7 @@ public class ZinniaIcon extends RenderedIcon {
 		for( int layer = 0; layer < layers; layer++ ) {
 			// Lower layer
 			for( int index = 0; index < likeness; index++ ) {
-				drawPetal();
+				drawPetal(layer == 0 ?  getStrokePaint(): getPrimaryPaint() );
 				spin( g( 16 ), g( 16 ), spacing );
 			}
 			// Upper layer
@@ -47,16 +47,15 @@ public class ZinniaIcon extends RenderedIcon {
 		drawCenter();
 	}
 
-	private void drawPetal() {
+	private void drawPetal( Paint paint ) {
 		double n = 5;
 
-		startPath();
-		moveTo( g( 15 ), g( 15 ) );
+		startPath( g( 15 ), g( 15 ) );
 		curveTo( g( 14 ), g( 8 ), g( 16 - n ), g( 1 ), g( 16 ), g( 1 ) );
 		curveTo( g( 16 + n ), g( 1 ), g( 18 ), g( 8 ), g( 17 ), g( 15 ) );
 		closePath();
 
-		fill( getPrimaryPaint() );
+		fill( paint );
 		//draw( Color.HOTPINK.darker() );
 	}
 
