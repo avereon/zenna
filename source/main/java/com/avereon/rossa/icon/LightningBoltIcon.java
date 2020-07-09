@@ -1,40 +1,16 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.RenderedIcon;
+import com.avereon.venza.image.SvgIcon;
 
-public class LightningBoltIcon extends RenderedIcon {
+public class LightningBoltIcon extends SvgIcon {
 
-	@Override
-	protected void render() {
-		thinBolt();
+	public LightningBoltIcon() {
+		// Thin
+		add( "M16,1 L11,19 L16,19 L16,31 L21,13 L16,13 Z" );
+
+		// Thick
+		//add( "M17,3 L5,19 L18,19 L15,29 L27,13 L14,13 Z" );
 	}
-
-	private void thickBolt() {
-		startPath();
-		moveTo( g( 17 ), g( 3 ) );
-		lineTo( g( 5 ), g( 19 ) );
-		lineTo( g( 18 ), g( 19 ) );
-		lineTo( g( 15 ), g( 29 ) );
-		lineTo( g( 27 ), g( 13 ) );
-		lineTo( g( 14 ), g( 13 ) );
-		closePath();
-		fill();
-		//draw();
-	}
-
-	private void thinBolt() {
-		startPath();
-		moveTo( g( 16 ), g( 1 ) );
-		lineTo( g( 11 ), g( 19 ) );
-		lineTo( g( 16 ), g( 19 ) );
-		lineTo( g( 16 ), g( 31 ) );
-		lineTo( g( 21 ), g( 13 ) );
-		lineTo( g( 16 ), g( 13 ) );
-		closePath();
-		fill();
-		//draw();
-	}
-
 	public static void main( String[] commands ) {
 		proof( new LightningBoltIcon() );
 	}
