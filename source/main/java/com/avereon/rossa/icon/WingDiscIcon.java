@@ -86,7 +86,6 @@ public class WingDiscIcon extends RenderedIcon {
 		wy = g( 25 );
 		vx = xx;
 		vy = xy;
-
 	}
 
 	@Override
@@ -108,14 +107,14 @@ public class WingDiscIcon extends RenderedIcon {
 
 		// Left wing
 		getGraphicsContext2D().save();
-		clip( 0, 0, 0.5, 1 );
+		clip( 0, 0, 0.5 * DEFAULT_GRID, DEFAULT_GRID );
 		arrow();
 		fill();
 		getGraphicsContext2D().restore();
 
 		// Right wing
 		getGraphicsContext2D().save();
-		clip( 0.5, 0, 1, 1 );
+		clip( 0.5 * DEFAULT_GRID, 0, DEFAULT_GRID, DEFAULT_GRID );
 		arrow();
 		fill();
 		getGraphicsContext2D().restore();
