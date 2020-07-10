@@ -5,6 +5,10 @@ import javafx.geometry.Point2D;
 
 public class RefreshIcon extends RenderedIcon {
 
+	private static final double CX = 16;
+
+	private static final double CY = 16;
+
 	@Override
 	protected void render() {
 		double radius = g( 12 );
@@ -27,15 +31,15 @@ public class RefreshIcon extends RenderedIcon {
 		double theta = 180 - (alpha + (90 - beta));
 		double arrowAngle = tipAngle - alpha;
 		double arrowRadius = radius * (Math.sin( Math.toRadians( 90 - beta ) ) / Math.sin( Math.toRadians( theta ) ));
-		double arrowX = 0.5 + Math.cos( Math.toRadians( arrowAngle ) ) * arrowRadius;
-		double arrowY = 0.5 - Math.sin( Math.toRadians( arrowAngle ) ) * arrowRadius;
+		double arrowX = CX + Math.cos( Math.toRadians( arrowAngle ) ) * arrowRadius;
+		double arrowY = CY - Math.sin( Math.toRadians( arrowAngle ) ) * arrowRadius;
 
 		double shaftRadius = radius + 0.5 * (arrowRadius - radius);
-		double shaftX = 0.5 + Math.cos( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
-		double shaftY = 0.5 - Math.sin( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
+		double shaftX = CX + Math.cos( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
+		double shaftY = CY - Math.sin( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
 
-		double tailX = 0.5 + Math.cos( Math.toRadians( tailAngle ) ) * radius;
-		double tailY = 0.5 - Math.sin( Math.toRadians( tailAngle ) ) * radius;
+		double tailX = CX + Math.cos( Math.toRadians( tailAngle ) ) * radius;
+		double tailY = CY - Math.sin( Math.toRadians( tailAngle ) ) * radius;
 
 		double midpointX = 0.5 * (tailX + shaftX);
 		double midpointY = 0.5 * (tailY + shaftY);
@@ -49,7 +53,7 @@ public class RefreshIcon extends RenderedIcon {
 		double tailStart = Math.toDegrees( Math.atan2( tailCenter.getY() - shaftY, shaftX - tailCenter.getX() ) );
 
 		startPath();
-		addArc( 0.5, 0.5, radius, radius, tailAngle, extent );
+		addArc( CX, CY, radius, radius, tailAngle, extent );
 		lineTo( arrowX, arrowY );
 		lineTo( shaftX, shaftY );
 		addArc( tailCenter.getX(), tailCenter.getY(), tailRadius, tailRadius, tailStart, -120 );
@@ -57,7 +61,7 @@ public class RefreshIcon extends RenderedIcon {
 		fill();
 
 		startPath();
-		addArc( 0.5, 0.5, radius, radius, tailAngle + 180, extent );
+		addArc( CX, CY, radius, radius, tailAngle + 180, extent );
 		lineTo( rotate( arrowX ), rotate( arrowY ) );
 		lineTo( rotate( shaftX ), rotate( shaftY ) );
 		addArc( rotate( tailCenter.getX() ), rotate( tailCenter.getY() ), tailRadius, tailRadius, tailStart + 180, -120 );
@@ -66,7 +70,7 @@ public class RefreshIcon extends RenderedIcon {
 	}
 
 	private double rotate( double value ) {
-		return -(value - 0.5) + 0.5;
+		return -(value - 16) + 16;
 	}
 
 	public static void main( String[] commands ) {
