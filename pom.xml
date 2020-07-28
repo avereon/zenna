@@ -43,15 +43,15 @@
 
 		<!-- Version numbers updated 02 Jul 2020 -->
 		<!-- Runtime dependencies -->
-		<venza.version>[0.4-SNAPSHOT,)</venza.version>
+		<zerra.version>[0.4-SNAPSHOT,)</zerra.version>
 	</properties>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>com.avereon</groupId>
-			<artifactId>venza</artifactId>
-			<version>${venza.version}</version>
+			<artifactId>zerra</artifactId>
+			<version>${zerra.version}</version>
 		</dependency>
 
 	</dependencies>

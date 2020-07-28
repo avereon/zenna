@@ -1,6 +1,6 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.RenderedIcon;
+import com.avereon.zerra.image.RenderedIcon;
 import javafx.geometry.Point2D;
 
 public class RefreshIcon extends RenderedIcon {

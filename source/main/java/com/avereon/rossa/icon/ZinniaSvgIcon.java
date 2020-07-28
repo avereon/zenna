@@ -1,7 +1,7 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.color.Colors;
-import com.avereon.venza.image.SvgIcon;
+import com.avereon.zerra.color.Colors;
+import com.avereon.zerra.image.SvgIcon;
 import javafx.scene.paint.Color;
 
 public class ZinniaSvgIcon extends SvgIcon {

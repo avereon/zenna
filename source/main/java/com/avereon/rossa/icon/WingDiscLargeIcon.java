@@ -1,6 +1,6 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.image.Proof;
+import com.avereon.zerra.image.Proof;
 import javafx.scene.paint.Color;
 
 /**

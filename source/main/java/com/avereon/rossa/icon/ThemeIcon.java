@@ -1,7 +1,7 @@
 package com.avereon.rossa.icon;
 
-import com.avereon.venza.color.Colors;
-import com.avereon.venza.image.RenderedIcon;
+import com.avereon.zerra.color.Colors;
+import com.avereon.zerra.image.RenderedIcon;
 import javafx.scene.paint.Color;
 
 public class ThemeIcon extends RenderedIcon {
