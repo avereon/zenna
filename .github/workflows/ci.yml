@@ -1,4 +1,4 @@
-name: Avereon Rossa Continuous
+name: Avereon Zenna Continuous
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - stable
 
 env:
-  AVN_PRODUCT: "rossa"
+  AVN_PRODUCT: "zenna"
   # The default release, should be overridden in config.sh
   AVN_RELEASE: "latest"
   # The default platform, should be overridden in the platform binaries jobs below

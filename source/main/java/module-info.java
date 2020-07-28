@@ -1,7 +1,7 @@
-module com.avereon.rossa {
+module com.avereon.zenna {
 	requires transitive com.avereon.zerra;
 	requires javafx.graphics;
 	requires java.logging;
 
-	exports com.avereon.rossa.icon;
+	exports com.avereon.zenna.icon;
 }
