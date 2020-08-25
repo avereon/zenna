@@ -11,12 +11,7 @@ public class HexagonIcon extends RenderedIcon {
 		startPath();
 		getGraphicsContext2D().appendSVGPath( generateHexagon( 13 ) );
 		closePath();
-		setDrawWidth( 2 );
 		draw();
-	}
-
-	public static void main( String[] commands ) {
-		proof( new HexagonIcon() );
 	}
 
 	private String generateHexagon( double r ) {
@@ -33,6 +28,16 @@ public class HexagonIcon extends RenderedIcon {
 		path += " Z";
 
 		return path;
+	}
+
+	public static void main( String[] commands ) {
+		//proof( new HexagonIcon() );
+		//		try {
+		//			new VectorImageWriter().save( new HexagonIcon(), Paths.get( "target","hexagon.png" ), 256,256 );
+		//			Platform.exit();
+		//		} catch( Exception e ) {
+		//			e.printStackTrace();
+		//		}
 	}
 
 }
