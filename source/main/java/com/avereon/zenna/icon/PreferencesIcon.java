@@ -20,16 +20,23 @@ public class PreferencesIcon extends RenderedIcon {
 
 	private static final double s = 26;
 
+	private static final double r = 2.5;
+
+	private static final double r2 = r + 1;
+
+	private static final double w = 3;
+
 	@Override
 	protected void render() {
 		save();
 		startPath();
 		addRect( g( 0 ), g( 0 ), g( 32 ), g( 32 ) );
 		moveTo( g( c1 ), g( k1 ) );
-		addArc( g( c1 ), g( k1 ), g( 3 ), g( 3 ), 0, 360 );
+		addArc( g( c1 ), g( k1 ), g( r2 ), g( r2 ), 0, 360 );
 		closePath();
 		clip();
 		startPath();
+		setDrawWidth( w );
 		addLine( g( c1 ), g( n ), g( c1 ), g( s ) );
 		closePath();
 		draw();
@@ -39,10 +46,11 @@ public class PreferencesIcon extends RenderedIcon {
 		startPath();
 		addRect( g( 0 ), g( 0 ), g( 32 ), g( 32 ) );
 		moveTo( g( c2 ), g( k2 ) );
-		addArc( g( c2 ), g( k2 ), g( 3 ), g( 3 ), 0, 360 );
+		addArc( g( c2 ), g( k2 ), g( r2 ), g( r2 ), 0, 360 );
 		closePath();
 		clip();
 		startPath();
+		setDrawWidth( w );
 		addLine( g( c2 ), g( n ), g( c2 ), g( s ) );
 		closePath();
 		draw();
@@ -52,10 +60,11 @@ public class PreferencesIcon extends RenderedIcon {
 		startPath();
 		addRect( g( 0 ), g( 0 ), g( 32 ), g( 32 ) );
 		moveTo( g( c3 ), g( k3 ) );
-		addArc( g( c3 ), g( k3 ), g( 3 ), g( 3 ), 0, 360 );
+		addArc( g( c3 ), g( k3 ), g( r2 ), g( r2 ), 0, 360 );
 		closePath();
 		clip();
 		startPath();
+		setDrawWidth( w );
 		addLine( g( c3 ), g( n ), g( c3 ), g( s ) );
 		closePath();
 		draw();
@@ -80,9 +89,9 @@ public class PreferencesIcon extends RenderedIcon {
 	private void knob() {
 		startPath();
 		moveTo( 0, 0 );
-		addArc( 0, 0, g( 4 ), g( 4 ), 0, 360 );
-		moveTo( 0, 0 );
-		addArc( 0, 0, g( 2 ), g( 2 ), 0, 360 );
+//		addArc( 0, 0, g( 4 ), g( 4 ), 0, 360 );
+//		moveTo( 0, 0 );
+		addArc( 0, 0, g( r ), g( r ), 0, 360 );
 		closePath();
 		fill();
 	}

@@ -12,8 +12,6 @@ public class PropertiesIcon extends RenderedIcon {
 
 	private static final double e = 6;
 
-	private static final double gap = 6;
-
 	private static final double w = 26;
 
 	@Override
@@ -27,8 +25,7 @@ public class PropertiesIcon extends RenderedIcon {
 	}
 
 	private void addRow( double y ) {
-		addLine( g( e ), g( y ), g( e ), g( y ) );
-		addLine( g( e + gap ), g( y ), g( w ), g( y ) );
+		addLine( g( e ), g( y ), g( w ), g( y ) );
 	}
 
 	public static void main( String[] commands ) {

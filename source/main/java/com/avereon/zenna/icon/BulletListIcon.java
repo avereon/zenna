@@ -2,7 +2,7 @@ package com.avereon.zenna.icon;
 
 import com.avereon.zerra.image.RenderedIcon;
 
-public class HamburgerIcon extends RenderedIcon {
+public class BulletListIcon extends RenderedIcon {
 
 	private static final double r1 = 8;
 
@@ -11,6 +11,8 @@ public class HamburgerIcon extends RenderedIcon {
 	private static final double r3 = 24;
 
 	private static final double e = 6;
+
+	private static final double gap = 6;
 
 	private static final double w = 26;
 
@@ -25,11 +27,12 @@ public class HamburgerIcon extends RenderedIcon {
 	}
 
 	private void addRow( double y ) {
-		addLine( g( e ), g( y ), g( w ), g( y ) );
+		addLine( g( e ), g( y ), g( e ), g( y ) );
+		addLine( g( e + gap ), g( y ), g( w ), g( y ) );
 	}
 
 	public static void main( String[] commands ) {
-		RenderedIcon.proof( new HamburgerIcon() );
+		proof( new BulletListIcon() );
 	}
 
 }
