@@ -29,17 +29,17 @@ public class ZinniaSvgIcon extends SvgIcon {
 		for( int layer = 0; layer < layers; layer++ ) {
 			for( int index = 0; index < likeness; index++ ) {
 				double angle = index * spacing + layer * offset;
-				add( layer == 0 ? null : PRIMARY, petal( angle ) );
+				fill( petal( angle ), layer == 0 ? null : PRIMARY );
 			}
 		}
 
 		// Center
-		add( SECONDARY, circle( 16, 16, centerRadius ) );
+		fill( circle( 16, 16, centerRadius ), SECONDARY );
 
 		// Stamen
-		add( Color.YELLOW, stamen( 10 ) );
-		add( Color.YELLOW, stamen( 130 ) );
-		add( Color.YELLOW, stamen( 250 ) );
+		fill( stamen( 10 ), Color.YELLOW );
+		fill( stamen( 130 ), Color.YELLOW );
+		fill( stamen( 250 ), Color.YELLOW );
 	}
 
 	private String petal( double angle ) {
