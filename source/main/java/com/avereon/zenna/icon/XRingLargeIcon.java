@@ -6,7 +6,7 @@ package com.avereon.zenna.icon;
 public class XRingLargeIcon extends XRingIcon {
 
 	public XRingLargeIcon() {
-		super( 4, 4 );
+		super( 4, 6 );
 	}
 
 	public static void main( String[] commands ) {
