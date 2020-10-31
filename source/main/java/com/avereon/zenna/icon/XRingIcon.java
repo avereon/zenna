@@ -24,7 +24,9 @@ public class XRingIcon extends XIcon {
 	// Orange 500
 	static final Color JET_TIP = Color.web( "#FF9800" );
 
-	private final double tilt;
+	private final double outerTilt;
+
+	private final double innerTilt;
 
 	private final double outerRingMax;
 
@@ -45,11 +47,12 @@ public class XRingIcon extends XIcon {
 		//setStyle( "-fx-stroke: #404040;-fx-accent-color: -fx-accent;" );
 		//setStyle( "-fx-stroke: #C0C0C0;-fx-accent-color: -fx-accent;" );
 
-		tilt = 12.0 / 16.0;
+		outerTilt = 12.0 / 16.0;
+		innerTilt = 10.0 / 16.0;
 		outerRingMax = 16 + getRadius() - getInset();
-		outerRingMin = outerRingMax * tilt;
+		outerRingMin = outerRingMax * outerTilt;
 		innerRingMax = getTr();
-		innerRingMin = innerRingMax * tilt;
+		innerRingMin = innerRingMax * innerTilt;
 	}
 
 	protected void render() {
@@ -129,7 +132,7 @@ public class XRingIcon extends XIcon {
 		List<Stop> ringPaintStops = new ArrayList<>();
 		ringPaintStops.add( new Stop( 0.6, RING_HIGHLIGHT ) );
 		ringPaintStops.add( new Stop( 0.9, RING_BASE ) );
-		return radialPaint( g( 16 ), (1 / tilt) * g( 16 ), g( 11 ), ringPaintStops );
+		return radialPaint( g( 16 ), (1 / outerTilt) * g( 16 ), g( 11 ), ringPaintStops );
 	}
 
 	public static void main( String[] commands ) {
