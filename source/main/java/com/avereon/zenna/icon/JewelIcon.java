@@ -1,12 +1,13 @@
 package com.avereon.zenna.icon;
 
 import com.avereon.zerra.image.SvgIcon;
+import com.avereon.zerra.image.VectorIcon;
+import com.avereon.zerra.image.VectorImage;
 import com.avereon.zerra.image.VectorImageWriter;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class JewelIcon extends SvgIcon {
 
@@ -28,21 +29,14 @@ public class JewelIcon extends SvgIcon {
 
 	private static final double HALF_ANGLE = 0.5 * ANGLE;
 
-	public JewelIcon() {
-		Color amethyst = Color.web( "#40208060" );
-		Color emerald = Color.web( "#20804060" );
-		Color topaz = Color.web( "#20408060" );
-		Color sapphire = Color.web( "#001060c0" );
+	private Color color;
 
+	public JewelIcon() {}
+
+	public JewelIcon( Color color ) {
+		this.color = color;
 		setStyle( "-fx-stroke: #000000;" );
-		fill( circle( C, C, OUTER_RADIUS - 0.5 * OUTLINE_WIDTH ), sapphire );
-
-		String faceA = face( 3 * ANGLE + HALF_ANGLE );
-		String faceB = face( 4 * ANGLE + HALF_ANGLE );
-		String faceC = face( 5 * ANGLE + HALF_ANGLE );
-		fill( faceA, Color.web( "#ffffff60" ) );
-		fill( faceB, Color.web( "#ffffffa0" ) );
-		fill( faceC, Color.web( "#ffffff60" ) );
+		fill( circle( C, C, OUTER_RADIUS - 0.5 * OUTLINE_WIDTH ), color );
 
 		StringBuilder builder = new StringBuilder( circle( C, C, OUTER_RADIUS ) );
 		builder.append( top() );
@@ -51,6 +45,23 @@ public class JewelIcon extends SvgIcon {
 			builder.append( face( angle ) );
 		}
 		fill( builder.toString() );
+
+		String faceA = face( 3 * ANGLE + HALF_ANGLE );
+		String faceB = face( 4 * ANGLE + HALF_ANGLE );
+		String faceC = face( 5 * ANGLE + HALF_ANGLE );
+		fill( faceA, Color.web( "#ffffff60" ) );
+		fill( faceB, Color.web( "#ffffff80" ) );
+		fill( faceC, Color.web( "#ffffff60" ) );
+
+		fill( top(), Color.web( "#ffffff20" ) );
+	}
+
+	@Override
+	@SuppressWarnings( "unchecked" )
+	public <T extends VectorImage> T copy() {
+		T icon = super.copy();
+		((JewelIcon)icon).color = color;
+		return icon;
 	}
 
 	private String top() {
@@ -103,16 +114,21 @@ public class JewelIcon extends SvgIcon {
 	}
 
 	public static void main( String[] parameters ) {
-		Path path = Paths.get( "target/jewel.png" );
-		System.err.println( "path=" + path.toAbsolutePath() );
-		JewelIcon icon = new JewelIcon();
-		icon.resize( 2048 );
+		Color amethyst = Color.web( "#40208060" );
+		Color emerald = Color.web( "#20804060" );
+		Color topaz = Color.web( "#20408060" );
+		Color sapphire = Color.web( "#001060c0" );
+
 		try {
-			new VectorImageWriter().save( icon, path );
+			VectorImageWriter writer = new VectorImageWriter();
+			writer.save( (VectorIcon)new JewelIcon( amethyst ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-amethyst.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( emerald ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-emerald.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( topaz ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-topaz.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( sapphire ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-sapphire.png" ) );
 		} catch( Exception e ) {
 			e.printStackTrace();
 		}
-		proof( new JewelIcon() );
+		proof( new JewelIcon( sapphire ) );
 		//System.exit( 0 );
 	}
 
