@@ -15,10 +15,10 @@ public class ZinniaSvgIcon extends SvgIcon {
 	public ZinniaSvgIcon() {
 		super( 32, 32 );
 
-		String hotPink = Colors.web( Color.HOTPINK );
-		String deepPink = Colors.web( Color.HOTPINK.darker() );
-		String saddleBrown = Colors.web( Color.SADDLEBROWN );
-		String deepBrown = Colors.web( Color.SADDLEBROWN.darker() );
+		String hotPink = Colors.toString( Color.HOTPINK );
+		String deepPink = Colors.toString( Color.HOTPINK.darker() );
+		String saddleBrown = Colors.toString( Color.SADDLEBROWN );
+		String deepBrown = Colors.toString( Color.SADDLEBROWN.darker() );
 		String primary = "-fx-primary: ladder( -fx-text-background-color, " + deepPink + " 50%, " + hotPink + " 50% );";
 		String secondary = "-fx-secondary: ladder( -fx-text-background-color, " + deepBrown + " 50%, " + saddleBrown + " 50% );";
 		setStyle( primary + secondary );
