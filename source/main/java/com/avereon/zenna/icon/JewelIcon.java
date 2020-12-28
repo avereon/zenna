@@ -114,21 +114,27 @@ public class JewelIcon extends SvgIcon {
 	}
 
 	public static void main( String[] parameters ) {
-		Color amethyst = Color.web( "#40208060" );
-		Color emerald = Color.web( "#20804060" );
-		Color topaz = Color.web( "#20408060" );
-		Color sapphire = Color.web( "#001060c0" );
+		Color amethyst = Color.web( "#402080a0" );
+		Color citrine = Color.web( "#c06000a0" );
+		Color diamond = Color.web( "#ffffff20" );
+		Color emerald = Color.web( "#208040a0" );
+		Color ruby = Color.web( "#800000a0" );
+		Color sapphire = Color.web( "#001060a0" );
+		Color topaz = Color.web( "#204080a0" );
 
 		try {
 			VectorImageWriter writer = new VectorImageWriter();
 			writer.save( (VectorIcon)new JewelIcon( amethyst ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-amethyst.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( citrine ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-citrine.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( diamond ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-diamond.png" ) );
 			writer.save( (VectorIcon)new JewelIcon( emerald ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-emerald.png" ) );
-			writer.save( (VectorIcon)new JewelIcon( topaz ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-topaz.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( ruby ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-ruby.png" ) );
 			writer.save( (VectorIcon)new JewelIcon( sapphire ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-sapphire.png" ) );
+			writer.save( (VectorIcon)new JewelIcon( topaz ).resize( 2048 ), Path.of( System.getProperty( "user.home") + "/Profile/etc/icons/gem-topaz.png" ) );
 		} catch( Exception e ) {
 			e.printStackTrace();
 		}
-		proof( new JewelIcon( sapphire ) );
+		proof( new JewelIcon( ruby ) );
 		//System.exit( 0 );
 	}
 
