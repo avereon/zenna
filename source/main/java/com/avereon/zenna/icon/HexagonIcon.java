@@ -1,17 +1,17 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zerra.image.RenderedIcon;
+import com.avereon.zerra.image.SvgIcon;
+import com.avereon.zerra.image.VectorIcon;
+import com.avereon.zerra.image.VectorImageWriter;
+import javafx.application.Platform;
 
-public class HexagonIcon extends RenderedIcon {
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-	public HexagonIcon() {}
+public class HexagonIcon extends SvgIcon {
 
-	@Override
-	protected void render() {
-		startPath();
-		getGraphicsContext2D().appendSVGPath( generateHexagon( 13 ) );
-		closePath();
-		draw();
+	public HexagonIcon() {
+		draw( generateHexagon( 12 ) );
 	}
 
 	private String generateHexagon( double r ) {
@@ -31,13 +31,16 @@ public class HexagonIcon extends RenderedIcon {
 	}
 
 	public static void main( String[] commands ) {
-		//proof( new HexagonIcon() );
-		//		try {
-		//			new VectorImageWriter().save( new HexagonIcon(), Paths.get( "target","hexagon.png" ), 256,256 );
-		//			Platform.exit();
-		//		} catch( Exception e ) {
-		//			e.printStackTrace();
-		//		}
+		proof( new HexagonIcon() );
+		try {
+			//new VectorImageWriter().save( new HexagonIcon(), Paths.get( "target","hexagon.png" ), 2048, 2048 );
+			Path home = Paths.get( System.getProperty( "user.home" ) );
+			Path icons = home.resolve( "Profile/etc/icons" );
+			new VectorImageWriter().save( (VectorIcon)new HexagonIcon().resize( 2048 ), icons.resolve( "molecule-graphene.png" ) );
+			Platform.exit();
+		} catch( Exception e ) {
+			e.printStackTrace();
+		}
 	}
 
 }
