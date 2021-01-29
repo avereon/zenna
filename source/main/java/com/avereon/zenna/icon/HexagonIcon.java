@@ -10,14 +10,25 @@ import java.nio.file.Paths;
 
 public class HexagonIcon extends SvgIcon {
 
+	private double a;
+
+	private double b;
+
+	private double c;
+
 	public HexagonIcon() {
-		draw( generateHexagon( 12 ) );
+		a = Math.cos( Math.toRadians( 30 ) );
+		b = Math.sin( Math.toRadians( 30 ) );
+		c = 16;
+
+		double r = 10;
+		draw( generateHexagon( r ), 2 );
+		fill( generateAtoms( r, 2.5 ) );
 	}
 
 	private String generateHexagon( double r ) {
-		double c = 16;
-		double x = r * Math.cos( Math.toRadians( 30 ) );
-		double y = r * Math.sin( Math.toRadians( 30 ) );
+		double x = r * a;
+		double y = r * b;
 
 		String path = "M" + (c + x) + "," + (c - y);
 		path += " " + c + "," + (c - r);
@@ -30,13 +41,27 @@ public class HexagonIcon extends SvgIcon {
 		return path;
 	}
 
+	private String generateAtoms( double r, double size ) {
+		double x = r * a;
+		double y = r * b;
+
+		String path = circle( c + x, c - y, size );
+		path += circle( c, c - r, size );
+		path += circle( c - x, c - y, size );
+		path += circle( c - x, c + y, size );
+		path += circle( c, c + r, size );
+		path += circle( c + x, c + y, size );
+
+		return path;
+	}
+
 	public static void main( String[] commands ) {
 		proof( new HexagonIcon() );
 		try {
 			//new VectorImageWriter().save( new HexagonIcon(), Paths.get( "target","hexagon.png" ), 2048, 2048 );
 			Path home = Paths.get( System.getProperty( "user.home" ) );
 			Path icons = home.resolve( "Profile/etc/icons" );
-			new VectorImageWriter().save( (VectorIcon)new HexagonIcon().resize( 2048 ), icons.resolve( "molecule-graphene.png" ) );
+			new VectorImageWriter().save( (VectorIcon)new HexagonIcon().resize( 2048 ), icons.resolve( "graphene.png" ) );
 			Platform.exit();
 		} catch( Exception e ) {
 			e.printStackTrace();
