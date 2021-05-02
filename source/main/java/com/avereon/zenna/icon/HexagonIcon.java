@@ -22,8 +22,8 @@ public class HexagonIcon extends SvgIcon {
 		c = 16;
 
 		double r = 10;
-		draw( generateHexagon( r ), 2 );
-		fill( generateAtoms( r, 2.5 ) );
+		draw( generateHexagon( r ), 1.5 );
+		fill( generateAtoms( r, 3 ) );
 	}
 
 	private String generateHexagon( double r ) {
