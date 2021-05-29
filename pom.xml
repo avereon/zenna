@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>com.avereon.pom</groupId>
 		<artifactId>jar</artifactId>
-		<version>3.1.0-SNAPSHOT</version>
+		<version>3.1.0</version>
 	</parent>
 
 	<groupId>com.avereon</groupId>
 	<artifactId>zenna</artifactId>
-	<version>0.5-SNAPSHOT</version>
+	<version>0.5</version>
 	<packaging>jar</packaging>
 
 	<name>Zenna</name>
@@ -47,7 +47,7 @@
 
 		<!-- Version numbers updated 02 Jul 2020 -->
 		<!-- Runtime dependencies -->
-		<zerra.version>[0.4-SNAPSHOT,)</zerra.version>
+		<zerra.version>[0.4,)</zerra.version>
 	</properties>
 
 	<dependencies>
