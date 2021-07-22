@@ -2,15 +2,11 @@ package com.avereon.zenna.icon;
 
 import com.avereon.zerra.image.RenderedIcon;
 
-public class PropertiesIcon extends RenderedIcon {
+public class OptionsIcon extends RenderedIcon {
 
-	private static final int KEY_X = 4;
+	private static final int GAP = 13;
 
-	private static final int KEY_RADIUS = 2;
-
-	private static final int PROPERTY_LEFT = KEY_X + 4;
-
-	private static final int PROPERTY_RIGHT = 30 - PROPERTY_LEFT;
+	private static final int STROKE = 2;
 
 	private static final int Y1 = 8;
 
@@ -30,15 +26,12 @@ public class PropertiesIcon extends RenderedIcon {
 	}
 
 	private void renderSlider( int y ) {
-		renderKey( KEY_X, y, KEY_RADIUS );
-		renderValue( PROPERTY_LEFT, y - KEY_RADIUS, PROPERTY_RIGHT, 2 * KEY_RADIUS );
+		renderBar( 4, GAP - 3, y );
+		renderBar( GAP + 3, 28, y );
 	}
 
-	private void renderKey( int x, int y, int r ) {
-		startPath();
-		addOval( x, y, r, r );
-		closePath();
-		fill();
+	private void renderBar( int x1, int x2, int y ) {
+		renderValue( x1 - STROKE, y - STROKE, (x2 - x1) + 2 * STROKE, 2 * STROKE );
 	}
 
 	private void renderValue( int x, int y, int w, int h ) {
@@ -53,7 +46,7 @@ public class PropertiesIcon extends RenderedIcon {
 	}
 
 	public static void main( String[] commands ) {
-		proof( new PropertiesIcon() );
+		proof( new OptionsIcon() );
 	}
 
 }
