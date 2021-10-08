@@ -47,15 +47,15 @@
 
 		<!-- Version numbers updated 02 Jul 2020 -->
 		<!-- Runtime dependencies -->
-		<zerra.version>0.6</zerra.version>
+		<zarra.version>0.6</zarra.version>
 	</properties>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>com.avereon</groupId>
-			<artifactId>zerra</artifactId>
-			<version>${zerra.version}</version>
+			<artifactId>zarra</artifactId>
+			<version>${zarra.version}</version>
 		</dependency>
 
 	</dependencies>
