@@ -1,6 +1,6 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zerra.image.SvgIcon;
+import com.avereon.zarra.image.SvgIcon;
 
 public class LightningBoltIcon extends SvgIcon {
 

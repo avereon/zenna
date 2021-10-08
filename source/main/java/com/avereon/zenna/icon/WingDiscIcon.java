@@ -1,6 +1,6 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zerra.image.RenderedIcon;
+import com.avereon.zarra.image.RenderedIcon;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 

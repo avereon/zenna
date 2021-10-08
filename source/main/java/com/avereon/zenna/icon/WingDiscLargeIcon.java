@@ -1,6 +1,6 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zerra.image.Proof;
+import com.avereon.zarra.image.Proof;
 import javafx.scene.paint.Color;
 
 /**

@@ -1,6 +1,6 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zerra.image.RenderedIcon;
+import com.avereon.zarra.image.RenderedIcon;
 
 public class HamburgerIcon extends RenderedIcon {
 

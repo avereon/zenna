@@ -1,7 +1,7 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zerra.image.SvgIcon;
-import com.avereon.zerra.image.VectorImageWriter;
+import com.avereon.zarra.image.SvgIcon;
+import com.avereon.zarra.image.VectorImageWriter;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 
