@@ -1,5 +1,5 @@
 module com.avereon.zenna {
-	requires transitive com.avereon.zarra;
+	requires com.avereon.zarra;
 	requires javafx.graphics;
 	requires java.logging;
 
