@@ -47,7 +47,7 @@
 
 		<!-- Version numbers updated 02 Jul 2020 -->
 		<!-- Runtime dependencies -->
-		<zarra.version>0.7</zarra.version>
+		<zarra.version>[0.7,)</zarra.version>
 	</properties>
 
 	<dependencies>
