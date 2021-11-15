@@ -5,6 +5,9 @@ import com.avereon.zarra.image.SvgIcon;
 public class LightningBoltIcon extends SvgIcon {
 
 	public LightningBoltIcon() {
+		// Triangles
+		//fill( "M15,2 L12,16 L14,16 L17,30 L20,16 L18,16 Z" );
+
 		// Thin
 		fill( "M16,1 L11,19 L16,19 L16,31 L21,13 L16,13 Z" );
 
