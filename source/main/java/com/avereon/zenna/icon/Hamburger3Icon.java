@@ -2,13 +2,15 @@ package com.avereon.zenna.icon;
 
 import com.avereon.zarra.image.RenderedIcon;
 
-public class HamburgerIcon extends RenderedIcon {
+public class Hamburger3Icon extends RenderedIcon {
+
+	private static final double spacing = 8;
 
 	private static final double r1 = 8;
 
-	private static final double r2 = 16;
+	private static final double r2 = r1 + spacing;
 
-	private static final double r3 = 24;
+	private static final double r3 = r2 + spacing;
 
 	private static final double e = 6;
 
@@ -29,7 +31,7 @@ public class HamburgerIcon extends RenderedIcon {
 	}
 
 	public static void main( String[] commands ) {
-		RenderedIcon.proof( new HamburgerIcon() );
+		RenderedIcon.proof( new Hamburger3Icon() );
 	}
 
 }
