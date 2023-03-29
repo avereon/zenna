@@ -14,9 +14,9 @@ public class Hamburger4Icon extends RenderedIcon {
 
 	private static final double r4 = r3 + spacing;
 
-	private static final double e = 6;
+	private static final double e = 4;
 
-	private static final double w = 26;
+	private static final double w = 28;
 
 	@Override
 	protected void render() {
