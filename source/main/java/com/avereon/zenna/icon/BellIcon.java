@@ -5,8 +5,12 @@ import com.avereon.zarra.image.SvgIcon;
 public class BellIcon extends SvgIcon {
 
     public BellIcon() {
-        fill("M4,24L16,4L28,24Z");
-        fill("M14,26L18,26A2,2,0,0,1,14,26");
+        // Bell
+        //fill("M4,24L16,4L28,24Z");
+        fill( "M4,24C4,18,8,20,8,10A5,5,0,0,1,24,10C24,20,28,18,28,24");
+
+        // Gong
+        fill("M13,26L19,26A3,3,0,0,1,13,26");
     }
 
     public static void main( String[] commands ) {
