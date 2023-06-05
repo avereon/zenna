@@ -6,7 +6,6 @@ public class BellIcon extends SvgIcon {
 
     public BellIcon() {
         // Bell
-        //fill("M4,24L16,4L28,24Z");
         fill( "M4,24C4,18,8,20,8,10A5,5,0,0,1,24,10C24,20,28,18,28,24");
 
         // Gong
