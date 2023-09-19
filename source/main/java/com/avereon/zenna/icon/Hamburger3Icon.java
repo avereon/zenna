@@ -23,6 +23,8 @@ public class Hamburger3Icon extends RenderedIcon {
 		addRow( r2 );
 		addRow( r3 );
 		closePath();
+
+		setStrokeWidth(3);
 		draw();
 	}
 
