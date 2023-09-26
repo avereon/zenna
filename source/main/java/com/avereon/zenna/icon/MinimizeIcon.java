@@ -1,0 +1,15 @@
+package com.avereon.zenna.icon;
+
+import com.avereon.zarra.image.SvgIcon;
+
+public class MinimizeIcon extends SvgIcon {
+
+	public MinimizeIcon() {
+		draw("M 6,16 L 26,16" );
+	}
+
+	public static void main( String[] commands ) {
+		proof( new MinimizeIcon() );
+	}
+
+}
