@@ -1,16 +1,13 @@
 package com.avereon.zenna.icon;
 
 import com.avereon.zarra.image.RenderedIcon;
+import com.avereon.zarra.image.SvgIcon;
 
-public class CloseIcon extends RenderedIcon {
+public class CloseIcon extends SvgIcon {
 
-	@Override
-	protected void render() {
-		startPath( g( 8 ), g( 8 ) );
-		lineTo( g( 24 ), g( 24 ) );
-		moveTo( g( 8 ), g( 24 ) );
-		lineTo( g( 24 ), g( 8 ) );
-		draw();
+	public CloseIcon() {
+		draw( "M8,8L24,24" );
+		draw( "M8,24L24,8" );
 	}
 
 	public static void main( String[] commands ) {
