@@ -1,17 +1,16 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zarra.image.RenderedIcon;
+import com.avereon.zarra.image.SvgIcon;
 
-public class WorkareaIcon extends RenderedIcon {
+public class WorkareaIcon extends SvgIcon {
 
-	@Override
-	protected void render() {
-		startPath();
-		addArc( g( 6 ), g( 6 ), g( 2 ), g( 2 ), 90, 90 );
-		addArc( g( 6 ), g( 26 ), g( 2 ), g( 2 ), 180, 90 );
-		addArc( g( 26 ), g( 26 ), g( 2 ), g( 2 ), 270, 90 );
-		addArc( g( 26 ), g( 6 ), g( 2 ), g( 2 ), 0, 90 );
-		fill();
+	public WorkareaIcon() {
+		String borderOut = "M2,4 L2,28 L30,28 L30,4 Z";
+		String borderIn = "M4,6 L4,26 L28,26 L28,6 Z";
+		String workarea = "M6,8 L6,24 L26,24 L26,8 Z";
+
+		String icon = borderOut + " " + borderIn + " " + workarea;
+		fill( icon );
 	}
 
 	public static void main( String[] commands ) {
