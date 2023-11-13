@@ -10,13 +10,13 @@ public class PerformIcon extends SvgIcon {
 		draw( "M" + ox + "," + oy + " L" + ox + "," + oy );
 		draw( "M" + ox + "," + (oy + 6) + " L" + ox + ",32" );
 
-		draw( arc( ox, oy, 5, 135, 90 ), 2 );
-		draw( arc( ox, oy, 9, 135, 90 ), 2 );
-		draw( arc( ox, oy, 13, 135, 90 ), 2 );
+		draw( arc( true, ox, oy, 5, 135, 90 ), 2 );
+		draw( arc( true, ox, oy, 9, 135, 90 ), 2 );
+		draw( arc( true, ox, oy, 13, 135, 90 ), 2 );
 
-		draw( arc( ox, oy, 5, 45, -90 ), 2 );
-		draw( arc( ox, oy, 9, 45, -90 ), 2 );
-		draw( arc( ox, oy, 13, 45, -90 ), 2 );
+		draw( arc( true, ox, oy, 5, 45, -90 ), 2 );
+		draw( arc( true, ox, oy, 9, 45, -90 ), 2 );
+		draw( arc( true, ox, oy, 13, 45, -90 ), 2 );
 	}
 
 	public static void main( String[] commands ) {
