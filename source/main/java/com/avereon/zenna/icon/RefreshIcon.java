@@ -11,30 +11,38 @@ public class RefreshIcon extends RenderedIcon {
 
 	@Override
 	protected void render() {
-		double radius = g( 12 );
-		double angle = -10;
-		double offset = 10;
-		double extent = 180 - (2 * offset);
+		// The outside radius of the arrow circle
+		double radius = g( 14 );
+
+		// The angle, in degrees, between the end of the arrow, the center of the icon and the tip of the next arrow
+		double gap = 5;
+
+		// The angle, in degrees, from the baseline to the tip of the arrow
+		double tilt = 0;
+
+		double extent = 180 - (2 * gap);
 
 		// The angle back from the tip of the arrow head
-		double alpha = 70;
+		// NOTE If alpha and beta are the same, the angle at the back tip is 90
+		double alpha = 80;
 
-		// The angle from the center of the arrow head to the edge
-		double beta = 70;
+		// The angle from the baseline to the back tip of the arrow
+		// NOTE If alpha and beta are the same, the angle at the back tip is 90
+		double beta = 60;
 
-		// The angle of the back edge of the arrow head
+		// The additional angle of the back edge of the arrow head
 		double sweep = 20;
 
-		double tailAngle = angle + offset;
+		double tailAngle = tilt + gap;
 		double tipAngle = tailAngle + extent;
 
-		double theta = 180 - (alpha + (90 - beta));
-		double arrowAngle = tipAngle - alpha;
-		double arrowRadius = radius * (Math.sin( Math.toRadians( 90 - beta ) ) / Math.sin( Math.toRadians( theta ) ));
+		double theta = 180 - (beta + (90 - alpha));
+		double arrowAngle = tipAngle - beta;
+		double arrowRadius = radius * (Math.sin( Math.toRadians( 90 - alpha ) ) / Math.sin( Math.toRadians( theta ) ));
 		double arrowX = CX + Math.cos( Math.toRadians( arrowAngle ) ) * arrowRadius;
 		double arrowY = CY - Math.sin( Math.toRadians( arrowAngle ) ) * arrowRadius;
 
-		double shaftRadius = radius + 0.5 * (arrowRadius - radius);
+		double shaftRadius = radius + 0.3 * (arrowRadius - radius);
 		double shaftX = CX + Math.cos( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
 		double shaftY = CY - Math.sin( Math.toRadians( arrowAngle + sweep ) ) * shaftRadius;
 
