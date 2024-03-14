@@ -4,12 +4,16 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class MagnifierIcon extends SvgIcon {
 
-	public MagnifierIcon() {
-		super( 32, 32 );
+	protected void define() {
+		super.define();
 
-		draw( circle( 12, 12, 9 ), 0.5 * getStrokeWidth() );
+		// Handle
 		clip( "M 0,0 L32,0 L32,32 L0,32 Z " + circle( 12, 12, 12 ) );
 		fill( ellipse( 24, 24, 4, 1.5, 45 ) );
+
+		// Glass
+		restore();
+		draw( circle( 12, 12, 9 ), 0.5 * getStrokeWidth() );
 	}
 
 	public static void main( String[] commands ) {
