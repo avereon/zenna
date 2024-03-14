@@ -5,7 +5,8 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class CloseIcon extends SvgIcon {
 
-	public CloseIcon() {
+	protected void define() {
+		super.define();
 		draw( "M8,8L24,24" );
 		draw( "M8,24L24,8" );
 	}

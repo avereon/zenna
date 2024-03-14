@@ -2,7 +2,6 @@ package com.avereon.zenna.icon;
 
 import com.avereon.zarra.image.SvgIcon;
 import com.avereon.zarra.image.VectorImageWriter;
-import javafx.application.Platform;
 import javafx.scene.paint.Color;
 
 import java.nio.file.Path;
@@ -27,16 +26,16 @@ public class MountainIcon extends SvgIcon {
 	}
 
 	public static void main( String[] parameters ) {
-		//proof( new MountainIcon() );
+		proof( new MountainIcon( Color.LIGHTSLATEGREY ) );
 
-		try {
-			save( 2048, null, "mountain.png" );
-			save( 2048, "#80808080", "mountain-background.png" );
-		} catch( Exception e ) {
-			e.printStackTrace();
-		} finally {
-			Platform.exit();
-		}
+//		try {
+//			save( 2048, null, "mountain.png" );
+//			save( 2048, "#80808080", "mountain-background.png" );
+//		} catch( Exception e ) {
+//			e.printStackTrace();
+//		} finally {
+//			Platform.exit();
+//		}
 	}
 
 	private static void save( int size, String color, String name ) throws Exception {

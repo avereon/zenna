@@ -4,7 +4,9 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class WrenchIcon extends SvgIcon {
 
-	public WrenchIcon() {
+	protected void define() {
+		super.define();
+
 		//		End: 196.8744942979443
 		//		Extent: 123.74898859588859
 		//		Length: 12.958963782067022

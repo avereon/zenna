@@ -4,7 +4,8 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class MaximizeIcon extends SvgIcon {
 
-	public MaximizeIcon() {
+	protected void define() {
+		super.define();
 		draw( "M4,10 L4,4 L10,4" );
 		draw( "M22,4 L28,4 L28,10" );
 		draw( "M28,22 L28,28 L22,28" );

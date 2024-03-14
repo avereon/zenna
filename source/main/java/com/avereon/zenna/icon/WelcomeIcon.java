@@ -4,7 +4,9 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class WelcomeIcon extends SvgIcon {
 
-	public WelcomeIcon() {
+	protected void define() {
+		super.define();
+
 		String tl = arc( 6, 6, 2, -90, -90 );
 		String bl = arc( 6, 26, 2, -180, -90 );
 		String br = arc( 26, 26, 2, -270, -90 );

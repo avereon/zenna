@@ -22,7 +22,8 @@ public class GearIcon extends SvgIcon {
 
 	private static final double ANGLE_OVER_2 = 0.5 * ANGLE;
 
-	public GearIcon() {
+	protected void define() {
+		super.define();
 		StringBuilder path = new StringBuilder();
 		for( int index = 0; index < TOOTH_COUNT; index++ ) {
 			double angle = SPIN + index * ANGLE;

@@ -12,8 +12,8 @@ public class ZinniaSvgIcon extends SvgIcon {
 
 	private int layers = 2;
 
-	public ZinniaSvgIcon() {
-		super( 32, 32 );
+	protected void define() {
+		super.define();
 
 		String hotPink = Colors.toString( Color.HOTPINK );
 		String deepPink = Colors.toString( Color.HOTPINK.darker() );

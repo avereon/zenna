@@ -4,7 +4,8 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class PerformIcon extends SvgIcon {
 
-	public PerformIcon() {
+	protected void define() {
+		super.define();
 		double ox = 16;
 		double oy = 12;
 		draw( "M" + ox + "," + oy + " L" + ox + "," + oy );

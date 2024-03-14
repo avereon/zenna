@@ -4,7 +4,8 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class PencilIcon extends SvgIcon {
 
-	public PencilIcon() {
+	protected void define() {
+		super.define();
 		double width = 4;
 		double halfW = 0.5 * width;
 		double w = 0.5 * width * Math.sqrt( 2 );

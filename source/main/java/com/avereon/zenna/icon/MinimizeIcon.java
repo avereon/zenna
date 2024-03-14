@@ -4,7 +4,8 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class MinimizeIcon extends SvgIcon {
 
-	public MinimizeIcon() {
+	protected void define() {
+		super.define();
 		draw("M 6,16 L 26,16" );
 	}
 

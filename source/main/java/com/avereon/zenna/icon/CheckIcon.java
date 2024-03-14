@@ -4,7 +4,8 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class CheckIcon extends SvgIcon {
 
-	public CheckIcon() {
+	protected void define() {
+		super.define();
 		draw( "M9,16 L14,24 L23,6" );
 	}
 

@@ -4,7 +4,9 @@ import com.avereon.zarra.image.SvgIcon;
 
 public class WorkareaIcon extends SvgIcon {
 
-	public WorkareaIcon() {
+	protected void define() {
+		super.define();
+
 		String borderOut = "M2,4 L2,28 L30,28 L30,4 Z";
 		String borderIn = "M4,6 L4,26 L28,26 L28,6 Z";
 		String workarea = "M6,8 L6,24 L26,24 L26,8 Z";

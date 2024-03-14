@@ -10,17 +10,20 @@ import java.nio.file.Paths;
 
 public class HexagonIcon extends SvgIcon {
 
-	private double a;
+	private final double a;
 
-	private double b;
+	private final double b;
 
-	private double c;
+	private final double c;
 
 	public HexagonIcon() {
 		a = Math.cos( Math.toRadians( 30 ) );
 		b = Math.sin( Math.toRadians( 30 ) );
 		c = 16;
+	}
 
+	protected void define() {
+		super.define();
 		double r = 10;
 		draw( generateHexagon( r ), 1.5 );
 		fill( generateAtoms( r, 3 ) );
