@@ -1,8 +1,8 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zarra.image.SvgIcon;
-import com.avereon.zarra.image.VectorIcon;
-import com.avereon.zarra.image.VectorImageWriter;
+import com.avereon.zerra.image.SvgIcon;
+import com.avereon.zerra.image.VectorIcon;
+import com.avereon.zerra.image.VectorImageWriter;
 import javafx.application.Platform;
 
 import java.nio.file.Path;

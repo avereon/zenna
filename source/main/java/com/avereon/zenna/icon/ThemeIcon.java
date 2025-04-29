@@ -1,7 +1,7 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zarra.color.Colors;
-import com.avereon.zarra.image.RenderedIcon;
+import com.avereon.zerra.color.Colors;
+import com.avereon.zerra.image.RenderedIcon;
 import javafx.scene.paint.Color;
 
 public class ThemeIcon extends RenderedIcon {

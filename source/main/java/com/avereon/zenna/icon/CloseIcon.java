@@ -1,7 +1,7 @@
 package com.avereon.zenna.icon;
 
-import com.avereon.zarra.image.RenderedIcon;
-import com.avereon.zarra.image.SvgIcon;
+import com.avereon.zerra.image.RenderedIcon;
+import com.avereon.zerra.image.SvgIcon;
 
 public class CloseIcon extends SvgIcon {
 
